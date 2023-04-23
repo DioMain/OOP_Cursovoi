@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PCBuilder.Repositories.DataBaseManager">
+    <Position X="13.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEABCBAAGGAAwCIAAAAAIAAEAgAABYAQAAAAAAAIAQ=</HashCode>
+      <FileName>Repositories\DataBaseManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PCBuilder.Repositories.RepositoryBase&lt;T&gt;">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAQAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\RepositoryBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PCBuilder.Repositories.CommentRepository" Collapsed="true">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\CommentRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.Repositories.OrderItemRepository" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\OrderItemRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.Repositories.OrderRepository" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\OrderRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.Repositories.PerformanceRepository" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\PerformanceRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.Repositories.ProductRepository" Collapsed="true">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.Repositories.TemplateItemRepository" Collapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\TemplateItemRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.Repositories.TemplateRepository" Collapsed="true">
+    <Position X="15.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\TemplateRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.Repositories.UserRepository" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="PCBuilder.Repositories.RepositoryBase&lt;T&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="5.75" Y="3" />
+        <Point X="5.75" Y="1.569" />
+        <Point X="7.5" Y="1.569" />
+        <Point X="7.5" Y="1.191" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAGAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PCBuilder.Repositories.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="9.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PCBuilder.Repositories.DataBaseErrorType" Collapsed="true">
+    <Position X="11.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAQAAABBAAAAAAAAIAQAAAAAAAAA=</HashCode>
+      <FileName>Repositories\DataBaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="PCBuilder.Repositories.DataBaseError" Collapsed="true">
+    <Position X="15.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\DataBaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="PCBuilder.Repositories.DataBaseSuccess" Collapsed="true">
+    <Position X="17.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\DataBaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

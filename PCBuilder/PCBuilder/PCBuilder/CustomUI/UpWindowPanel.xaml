@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="PCBuilder.CustomUI.UpWindowPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PCBuilder.CustomUI"
+             mc:Ignorable="d" x:Name="US"
+             d:DesignHeight="25" d:DesignWidth="300">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="25">
+        <Grid MouseDown="DockPanel_MouseDown" Background="Transparent" Panel.ZIndex="100">
+            <Grid Width="17" Height="17" Margin="0,8,30,0" Background="Transparent" 
+                  MouseDown="Image1_MouseDown" HorizontalAlignment="Right">
+                <Image Source="/Resources/Minimize.png"
+                 HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            </Grid>
+            <Image Source="/Resources/CrestAppClose.png"
+               Margin="0,8,9,0" MouseDown="Image0_MouseDown" HorizontalAlignment="Right"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="PCBuilder.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCBuilder.View"
+        xmlns:cui="clr-namespace:PCBuilder.CustomUI"
+        mc:Ignorable="d" WindowStyle="None" ResizeMode="CanMinimize" Background="#4268EF"
+        Title="Login" Height="470" Width="340" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/ButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <cui:UpWindowPanel/>
+        
+        <Grid x:Name="Loading">
+            
+        </Grid>
+        <Grid x:Name="Failed">
+            
+        </Grid>
+        <Grid x:Name="Main">
+            <StackPanel Margin="30,70,40,0">
+                <Button Height="44" Style="{StaticResource CustomButton}" Content="Log in"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
