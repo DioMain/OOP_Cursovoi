@@ -9,8 +9,6 @@ namespace PCBuilder.Model
 {
     public class DataBase : DbContext
     {
-        public DataBase() : base("default0") { }
-
         public DbSet<User> Users { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Performance> Performances { get; set; }
@@ -19,5 +17,7 @@ namespace PCBuilder.Model
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Comment> Comments { get; set; }
+
+        public DataBase() : base("default0") { }
     }
 }

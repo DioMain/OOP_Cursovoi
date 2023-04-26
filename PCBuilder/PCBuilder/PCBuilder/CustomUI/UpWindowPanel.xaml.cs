@@ -20,12 +20,83 @@ namespace PCBuilder.CustomUI
     /// </summary>
     public partial class UpWindowPanel : UserControl
     {
-        private Window _window;
+        public static readonly DependencyProperty IsCloseProp;
+        public static readonly DependencyProperty IsMinimizeProp;
+
+        #region Props
+
+        public bool IsClose
+        {
+            get => (bool)GetValue(IsCloseProp);
+            set => SetValue(IsCloseProp, value);
+        }
+        public bool IsMinimize
+        {
+            get => (bool)GetValue(IsMinimizeProp);
+            set => SetValue(IsMinimizeProp, value);
+        }
+
+        #endregion
+
+        public static readonly RoutedEvent OnCloseEvent;
+        public static readonly RoutedEvent OnMinimizeEvent;
+
+        #region Events
+
+        public event RoutedEventHandler OnClose
+        {
+            add
+            {
+                // добавление обработчика
+                AddHandler(OnCloseEvent, value);
+            }
+            remove
+            {
+                // удаление обработчика
+                RemoveHandler(OnCloseEvent, value);
+            }
+        }
+        public event RoutedEventHandler OnMininize
+        {
+            add
+            {
+                // добавление обработчика
+                AddHandler(OnMinimizeEvent, value);
+            }
+            remove
+            {
+                // удаление обработчика
+                RemoveHandler(OnMinimizeEvent, value);
+            }
+        }
+
+        #endregion
+
+        static UpWindowPanel()
+        {
+            IsCloseProp = DependencyProperty.Register(
+                "Close", typeof(bool), typeof(UpWindowPanel),
+                new PropertyMetadata(true)
+                );
+            IsMinimizeProp = DependencyProperty.Register(
+                "Minimize", typeof(bool), typeof(UpWindowPanel),
+                new PropertyMetadata(true)
+                );
+
+            OnCloseEvent = EventManager.RegisterRoutedEvent(
+                "OnClose", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(UpWindowPanel)
+                );
+            OnMinimizeEvent = EventManager.RegisterRoutedEvent(
+                "OnMinimize", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(UpWindowPanel)
+                );  
+        }
 
         public UpWindowPanel()
         {
             InitializeComponent();
         }
+
+        #region События
 
         private void DockPanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -34,12 +105,18 @@ namespace PCBuilder.CustomUI
 
         private void Image0_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Window.GetWindow(this).Close();
+            RaiseEvent(new RoutedEventArgs(OnCloseEvent, this));
+
+            if (IsClose) Window.GetWindow(this).Close();
         }
 
         private void Image1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Window.GetWindow(this).WindowState = WindowState.Minimized;
+            RaiseEvent(new RoutedEventArgs(OnMinimizeEvent, this));
+
+            if (IsMinimize) Window.GetWindow(this).WindowState = WindowState.Minimized;
         }
+
+        #endregion
     }
 }
