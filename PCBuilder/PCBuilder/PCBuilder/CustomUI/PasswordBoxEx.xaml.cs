@@ -81,14 +81,14 @@ namespace PCBuilder.CustomUI
 
             anim0.From = _fontsize;
             anim0.To = 9;
-            anim0.Duration = TimeSpan.FromMilliseconds(600);
+            anim0.Duration = TimeSpan.FromMilliseconds(400);
             anim0.EasingFunction = new PowerEase() { EasingMode = EasingMode.EaseOut };
 
             ThicknessAnimation anim1 = new ThicknessAnimation();
 
             anim1.From = _thickness;
             anim1.To = new Thickness(0, 6, 12, 0);
-            anim1.Duration = TimeSpan.FromMilliseconds(600);
+            anim1.Duration = TimeSpan.FromMilliseconds(400);
             anim1.EasingFunction = new PowerEase() { EasingMode = EasingMode.EaseOut };
 
             placeholder.BeginAnimation(TextBlock.FontSizeProperty, anim0);
@@ -100,14 +100,14 @@ namespace PCBuilder.CustomUI
 
             anim0.From = 9;
             anim0.To = _fontsize;
-            anim0.Duration = TimeSpan.FromMilliseconds(1000);
+            anim0.Duration = TimeSpan.FromMilliseconds(700);
             anim0.EasingFunction = new PowerEase() { EasingMode = EasingMode.EaseOut };
 
             ThicknessAnimation anim1 = new ThicknessAnimation();
 
             anim1.From = new Thickness(0, 6, 12, 0);
             anim1.To = _thickness;
-            anim1.Duration = TimeSpan.FromMilliseconds(1000);
+            anim1.Duration = TimeSpan.FromMilliseconds(700);
             anim1.EasingFunction = new PowerEase() { EasingMode = EasingMode.EaseOut };
 
             placeholder.BeginAnimation(TextBlock.FontSizeProperty, anim0);

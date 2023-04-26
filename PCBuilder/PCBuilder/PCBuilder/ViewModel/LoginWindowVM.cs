@@ -69,21 +69,27 @@ namespace PCBuilder.ViewModel
 
         #region Commands
 
-        private BaseCommand ClosingCommand;
-        public ICommand OnClose
+        #region To regitration
+
+        private BaseCommand ToRegistrationCommand;
+        public ICommand ToRegistration
         {
             get
             {
-                if (ClosingCommand == null)
-                    ClosingCommand = new BaseCommand(OnCloseInvoke);
+                if (ToRegistrationCommand == null)
+                    ToRegistrationCommand = new BaseCommand(ToRegistrationInvoke);
 
-                return ClosingCommand;
+                return ToRegistrationCommand;
             }
         }
-        private void OnCloseInvoke(object obj)
+        private void ToRegistrationInvoke(object obj)
         {
-            AnimatedClose();
+            new RegistrationWindow().Show();
+
+            Owner.Close();
         }
+
+        #endregion
 
         #endregion
 

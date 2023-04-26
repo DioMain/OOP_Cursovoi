@@ -8,12 +8,12 @@
              d:DesignHeight="25" d:DesignWidth="300">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="25">
         <Grid MouseDown="DockPanel_MouseDown" Background="Transparent" Panel.ZIndex="100">
-            <Grid Width="17" Height="17" Margin="0,8,30,0" Background="Transparent" 
+            <Grid Width="17" Height="17" Margin="0,8,30,0" Background="Transparent" Cursor="Hand"
                   MouseDown="Image1_MouseDown" HorizontalAlignment="Right">
                 <Image Source="/Resources/Minimize.png"
                  HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
             </Grid>
-            <Image Source="/Resources/CrestAppClose.png"
+            <Image Source="/Resources/CrestAppClose.png" Cursor="Hand"
                Margin="0,8,9,0" MouseDown="Image0_MouseDown" HorizontalAlignment="Right"/>
         </Grid>
     </Grid>

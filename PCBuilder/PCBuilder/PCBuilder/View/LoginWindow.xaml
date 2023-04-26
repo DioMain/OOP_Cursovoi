@@ -47,7 +47,13 @@
                 <TextBlock Style="{StaticResource H1Text}" Text="{DynamicResource Loc_Login_Label}"/>
                 <cui:TextBoxEx Height="46" Margin="0,100,0,0" Placeholder="{DynamicResource Loc_Login_EmailPlaceholder}"/>
                 <cui:PasswordBoxEx Height="46" Margin="0,19,0,0" Placeholder="{DynamicResource Loc_Login_PasswordPlaceholder}"/>
-                <TextBlock Style="{StaticResource HyperTextLogin}" Text="{DynamicResource Loc_Login_RegisterHypertext}" Margin="0,2,0,0"/>
+                <TextBlock Style="{StaticResource HyperTextLogin}" Text="{DynamicResource Loc_Login_RegisterHypertext}" Margin="0,2,0,0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDown">
+                            <i:InvokeCommandAction Command="{Binding ToRegistration}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBlock>
                 <Button Style="{StaticResource CustomButton}" Height="42" Content="{DynamicResource Loc_Login_Button}" Margin="0,45,0,0" Width="142"/>
                 <TextBlock Style="{StaticResource H2Text}" Foreground="Red" Text="Error" FontSize="16"/>
             </StackPanel>

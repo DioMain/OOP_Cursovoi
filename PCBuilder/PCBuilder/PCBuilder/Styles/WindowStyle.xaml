@@ -15,13 +15,7 @@
                             CornerRadius="9">
 
                         <Grid x:Name="Test">
-                            <cui:UpWindowPanel Panel.ZIndex="1000" IsClose="False">
-                                <i:Interaction.Triggers>
-                                    <i:EventTrigger EventName="OnClose">
-                                        <i:InvokeCommandAction Command="{Binding OnClose}"/>
-                                    </i:EventTrigger>
-                                </i:Interaction.Triggers>
-                            </cui:UpWindowPanel>
+                            <cui:UpWindowPanel Panel.ZIndex="1000"/>
 
                             <ContentPresenter Content="{TemplateBinding Content}"
                                   HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
