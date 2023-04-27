@@ -11,10 +11,18 @@
             <Grid Width="17" Height="17" Margin="0,8,30,0" Background="Transparent" Cursor="Hand"
                   MouseDown="Image1_MouseDown" HorizontalAlignment="Right">
                 <Image Source="/Resources/Minimize.png"
-                 HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                 HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="2" RenderingBias="Quality" ShadowDepth="0" Color="#3457D4"/>
+                    </Image.Effect>
+                </Image>
             </Grid>
             <Image Source="/Resources/CrestAppClose.png" Cursor="Hand"
-               Margin="0,8,9,0" MouseDown="Image0_MouseDown" HorizontalAlignment="Right"/>
+               Margin="0,8,9,0" MouseDown="Image0_MouseDown" HorizontalAlignment="Right">
+                <Image.Effect>
+                    <DropShadowEffect BlurRadius="2" RenderingBias="Quality" ShadowDepth="0" Color="#3457D4"/>
+                </Image.Effect>
+            </Image>
         </Grid>
     </Grid>
 </UserControl>

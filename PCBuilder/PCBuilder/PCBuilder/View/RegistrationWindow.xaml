@@ -6,7 +6,7 @@
         xmlns:cui="clr-namespace:PCBuilder.CustomUI"
         xmlns:local="clr-namespace:PCBuilder.View" WindowStyle="None" Style="{StaticResource LWindowStyle}"
         mc:Ignorable="d" Background="#4268EF"
-        Title="RegistrationWindow" Height="458" Width="846">
+        Title="RegistrationWindow" Height="448" Width="824">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="25*"/>
@@ -15,26 +15,54 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <TextBlock Text="Registation" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Style="{StaticResource H1Text}" Margin="0,34,0,0" FontSize="38"/>
+            <TextBlock Text="Registation" VerticalAlignment="Top" HorizontalAlignment="Center"
+                       Style="{StaticResource H1Text}" Margin="0,49,0,0" FontSize="36"/>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="269*"/>
+                <ColumnDefinition Width="87*"/>
+                <ColumnDefinition Width="431*"/>
+                <ColumnDefinition Width="44*"/>
             </Grid.ColumnDefinitions>
 
-            <DockPanel Grid.Column="0" Margin="41,44,41,0" VerticalAlignment="Top">
-                <cui:TextBoxEx DockPanel.Dock="Top" Height="44" Placeholder="Email"/>
-                <cui:PasswordBoxEx DockPanel.Dock="Top" Height="44" Margin="0,19,0,0" Placeholder="Password"/>
-                <cui:PasswordBoxEx DockPanel.Dock="Top" Height="44" Margin="0,19,0,0" Placeholder="Repeat password"/>
+            <DockPanel Grid.Column="0" Margin="44,40,0,0" VerticalAlignment="Top" Height="164">
+                <cui:TextBoxEx DockPanel.Dock="Top" Height="42" Placeholder="Email"/>
+                <cui:PasswordBoxEx DockPanel.Dock="Top" Height="42" Margin="0,19,0,0" Placeholder="Password"/>
+                <cui:PasswordBoxEx DockPanel.Dock="Top" Height="42" Margin="0,19,0,0" Placeholder="Repeat password"/>
             </DockPanel>
-            <DockPanel Grid.Column="1" Margin="41,44,41,0">
-                
+            <Grid Grid.Column="1">
+                <Image Source="/Resources/warning.png" Margin="2,141,62,60">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="4" RenderingBias="Quality" ShadowDepth="0"/>
+                    </Image.Effect>
+                </Image>
+                <Image Source="/Resources/warning.png" Margin="2,51,62,150">
+                    <Image.Effect>
+                        <DropShadowEffect BlurRadius="4" RenderingBias="Quality" ShadowDepth="0"/>
+                    </Image.Effect>
+                </Image>
+            </Grid>
+            <DockPanel Grid.Column="2" Margin="0,40,0,0" VerticalAlignment="Top" Height="164">
+                <DockPanel DockPanel.Dock="Top" Height="42">
+                    <cui:TextBoxEx DockPanel.Dock="Left" Width="202" Placeholder="First name"/>
+                    <cui:TextBoxEx DockPanel.Dock="Right" Width="202" HorizontalAlignment="Right" Placeholder="Last name"/>
+                </DockPanel>
+                <cui:TextBoxEx Margin="0,19,0,0" Height="42" DockPanel.Dock="Top" Placeholder="Address"/>
+                <Grid DockPanel.Dock="Top" Margin="0,19,0,0">
+                    <cui:TextBoxEx Height="42" HorizontalAlignment="Center" Width="208"  Placeholder="Contact number"/>
+                    <Image Source="/Resources/warning.png" Margin="323,0,81,0">
+                        <Image.Effect>
+                            <DropShadowEffect BlurRadius="4" RenderingBias="Quality" ShadowDepth="0"/>
+                        </Image.Effect>
+                    </Image>
+                </Grid>
             </DockPanel>
         </Grid>
-        <StackPanel Grid.Row="2">
-            
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center">
+            <TextBlock Style="{StaticResource H2Text}" FontSize="16" Foreground="Red" Text="Error"/>
+            <Button Style="{StaticResource CustomButton}" Content="Submit" Width="218" Height="49"/>
+            <TextBlock Style="{StaticResource HyperTextLogin}" Text="Back to login"/>
         </StackPanel>
     </Grid>
 </Window>

@@ -17,7 +17,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="14">
+                            BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="16">
                         <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"
                                       VerticalAlignment="Center" HorizontalAlignment="Left" Margin="8,0,0,0"/>
                     </Border>
