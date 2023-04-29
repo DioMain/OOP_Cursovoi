@@ -61,6 +61,15 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Empty field.
+        /// </summary>
+        public static string Loc_Global_EmptyField {
+            get {
+                return ResourceManager.GetString("Loc_Global_EmptyField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Login.
         /// </summary>
         public static string Loc_Login_Button {
@@ -129,6 +138,141 @@ namespace PCBuilder.Localization {
         public static string Loc_Login_RetryButton {
             get {
                 return ResourceManager.GetString("Loc_Login_RetryButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Address.
+        /// </summary>
+        public static string Loc_Reg_Address {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Contact number.
+        /// </summary>
+        public static string Loc_Reg_ContNum {
+            get {
+                return ResourceManager.GetString("Loc_Reg_ContNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Contact number have not right format!.
+        /// </summary>
+        public static string Loc_Reg_ContNum_Err {
+            get {
+                return ResourceManager.GetString("Loc_Reg_ContNum_Err", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Email.
+        /// </summary>
+        public static string Loc_Reg_Email {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на This email alredy exist!.
+        /// </summary>
+        public static string Loc_Reg_Email_Err0 {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Email_Err0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Email have not right format!.
+        /// </summary>
+        public static string Loc_Reg_Email_Err1 {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Email_Err1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Registration error!.
+        /// </summary>
+        public static string Loc_Reg_Error {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на First name.
+        /// </summary>
+        public static string Loc_Reg_FName {
+            get {
+                return ResourceManager.GetString("Loc_Reg_FName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Registration.
+        /// </summary>
+        public static string Loc_Reg_Label {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Label", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Last name.
+        /// </summary>
+        public static string Loc_Reg_LName {
+            get {
+                return ResourceManager.GetString("Loc_Reg_LName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Password dont equals!.
+        /// </summary>
+        public static string Loc_Reg_Pass_Err {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Pass_Err", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Password.
+        /// </summary>
+        public static string Loc_Reg_Password {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Repeat password.
+        /// </summary>
+        public static string Loc_Reg_RepeatPassword {
+            get {
+                return ResourceManager.GetString("Loc_Reg_RepeatPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Submit.
+        /// </summary>
+        public static string Loc_Reg_Submit {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Back to login.
+        /// </summary>
+        public static string Log_Reg_RetToLogin {
+            get {
+                return ResourceManager.GetString("Log_Reg_RetToLogin", resourceCulture);
             }
         }
     }

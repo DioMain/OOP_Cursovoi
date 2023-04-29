@@ -52,9 +52,9 @@ namespace PCBuilder.View
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            _hash1 = tb1.Text;
+            _hash1 = "a";
 
-            t1.Text = PasswordHasher.GetHash(tb1.Text);
+            t1.Text = Image.SourceProperty.PropertyType.Name;
 
             CheckHash();
         }

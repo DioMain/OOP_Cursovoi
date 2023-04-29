@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Loc_Global_EmptyField" xml:space="preserve">
+    <value>Пустое поле</value>
+  </data>
   <data name="Loc_Login_Button" xml:space="preserve">
     <value>Вход</value>
   </data>
@@ -140,5 +143,50 @@
   </data>
   <data name="Loc_Login_RetryButton" xml:space="preserve">
     <value>Повтор</value>
+  </data>
+  <data name="Loc_Reg_Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Loc_Reg_ContNum" xml:space="preserve">
+    <value>Контактный телефон</value>
+  </data>
+  <data name="Loc_Reg_ContNum_Err" xml:space="preserve">
+    <value>Контактный телефон имеет не правильный формат</value>
+  </data>
+  <data name="Loc_Reg_Email" xml:space="preserve">
+    <value>Почта</value>
+  </data>
+  <data name="Loc_Reg_Email_Err0" xml:space="preserve">
+    <value>Это почта уже используется!</value>
+  </data>
+  <data name="Loc_Reg_Email_Err1" xml:space="preserve">
+    <value>Почта имеет не правильный формат!</value>
+  </data>
+  <data name="Loc_Reg_Error" xml:space="preserve">
+    <value>Ошибка регистрации!</value>
+  </data>
+  <data name="Loc_Reg_FName" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Loc_Reg_Label" xml:space="preserve">
+    <value>Регистрация</value>
+  </data>
+  <data name="Loc_Reg_LName" xml:space="preserve">
+    <value>Фамилия</value>
+  </data>
+  <data name="Loc_Reg_Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="Loc_Reg_Pass_Err" xml:space="preserve">
+    <value>Пароли не равный!</value>
+  </data>
+  <data name="Loc_Reg_RepeatPassword" xml:space="preserve">
+    <value>Повторить пароль</value>
+  </data>
+  <data name="Loc_Reg_Submit" xml:space="preserve">
+    <value>Подтвердить</value>
+  </data>
+  <data name="Log_Reg_RetToLogin" xml:space="preserve">
+    <value>Вернуться к входу</value>
   </data>
 </root>

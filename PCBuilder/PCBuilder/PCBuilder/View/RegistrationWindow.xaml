@@ -26,42 +26,34 @@
                 <ColumnDefinition Width="44*"/>
             </Grid.ColumnDefinitions>
 
-            <DockPanel Grid.Column="0" Margin="44,40,0,0" VerticalAlignment="Top" Height="164">
+            <DockPanel Grid.Column="0" Margin="44,25,0,0" VerticalAlignment="Top">
+                <TextBlock DockPanel.Dock="Top" x:Name="emailError" Margin="0,3,0,0" Text="Error" Style="{StaticResource ErrorText}"/>
                 <cui:TextBoxEx DockPanel.Dock="Top" Height="42" Placeholder="Email"/>
-                <cui:PasswordBoxEx DockPanel.Dock="Top" Height="42" Margin="0,19,0,0" Placeholder="Password"/>
-                <cui:PasswordBoxEx DockPanel.Dock="Top" Height="42" Margin="0,19,0,0" Placeholder="Repeat password"/>
+                <TextBlock DockPanel.Dock="Top" x:Name="passError" Margin="0,3,0,0" Text="Error" Style="{StaticResource ErrorText}"/>
+                <cui:PasswordBoxEx DockPanel.Dock="Top" Height="42" Placeholder="Password"/>
+                <TextBlock DockPanel.Dock="Top" x:Name="repPassError" Margin="0,3,0,0" Text="Error" Style="{StaticResource ErrorText}"/>
+                <cui:PasswordBoxEx DockPanel.Dock="Top" Height="42" Placeholder="Repeat password"/>
             </DockPanel>
-            <Grid Grid.Column="1">
-                <Image Source="/Resources/warning.png" Margin="2,141,62,60">
-                    <Image.Effect>
-                        <DropShadowEffect BlurRadius="4" RenderingBias="Quality" ShadowDepth="0"/>
-                    </Image.Effect>
-                </Image>
-                <Image Source="/Resources/warning.png" Margin="2,51,62,150">
-                    <Image.Effect>
-                        <DropShadowEffect BlurRadius="4" RenderingBias="Quality" ShadowDepth="0"/>
-                    </Image.Effect>
-                </Image>
-            </Grid>
-            <DockPanel Grid.Column="2" Margin="0,40,0,0" VerticalAlignment="Top" Height="164">
+            <Grid Grid.Column="1"/>
+            <DockPanel Grid.Column="2" Margin="0,25,0,0" VerticalAlignment="Top">
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBlock DockPanel.Dock="Left" Width="202" x:Name="FNameError" Text="Error" Style="{StaticResource ErrorText}"/>
+                    <TextBlock DockPanel.Dock="Right" x:Name="LNameError" Text="Error" Style="{StaticResource ErrorText}"/>
+                </DockPanel>
                 <DockPanel DockPanel.Dock="Top" Height="42">
                     <cui:TextBoxEx DockPanel.Dock="Left" Width="202" Placeholder="First name"/>
                     <cui:TextBoxEx DockPanel.Dock="Right" Width="202" HorizontalAlignment="Right" Placeholder="Last name"/>
                 </DockPanel>
-                <cui:TextBoxEx Margin="0,19,0,0" Height="42" DockPanel.Dock="Top" Placeholder="Address"/>
-                <Grid DockPanel.Dock="Top" Margin="0,19,0,0">
-                    <cui:TextBoxEx Height="42" HorizontalAlignment="Center" Width="208"  Placeholder="Contact number"/>
-                    <Image Source="/Resources/warning.png" Margin="323,0,81,0">
-                        <Image.Effect>
-                            <DropShadowEffect BlurRadius="4" RenderingBias="Quality" ShadowDepth="0"/>
-                        </Image.Effect>
-                    </Image>
-                </Grid>
+                <TextBlock DockPanel.Dock="Top" x:Name="addressError" Margin="0,3,0,0" Text="Error" Style="{StaticResource ErrorText}"/>
+                <cui:TextBoxEx Height="42" DockPanel.Dock="Top" Placeholder="Address"/>
+                <DockPanel DockPanel.Dock="Top" Width="208" Margin="0,3,0,0">
+                    <TextBlock DockPanel.Dock="Top" x:Name="contNumError" Text="Error" Style="{StaticResource ErrorText}"/>
+                    <cui:TextBoxEx Height="42" DockPanel.Dock="Top" Placeholder="Contact number"/>
+                </DockPanel>
             </DockPanel>
         </Grid>
         <StackPanel Grid.Row="2" HorizontalAlignment="Center">
-            <TextBlock Style="{StaticResource H2Text}" FontSize="16" Foreground="Red" Text="Error"/>
-            <Button Style="{StaticResource CustomButton}" Content="Submit" Width="218" Height="49"/>
+            <Button Style="{StaticResource CustomButton}" Content="Submit" Width="218" Height="49" Margin="0,15,0,0"/>
             <TextBlock Style="{StaticResource HyperTextLogin}" Text="Back to login"/>
         </StackPanel>
     </Grid>

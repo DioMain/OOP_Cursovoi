@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Loc_Global_EmptyField" xml:space="preserve">
+    <value>Empty field</value>
+  </data>
   <data name="Loc_Login_Button" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -140,5 +143,50 @@
   </data>
   <data name="Loc_Login_RetryButton" xml:space="preserve">
     <value>Retry</value>
+  </data>
+  <data name="Loc_Reg_Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Loc_Reg_ContNum" xml:space="preserve">
+    <value>Contact number</value>
+  </data>
+  <data name="Loc_Reg_ContNum_Err" xml:space="preserve">
+    <value>Contact number have not right format!</value>
+  </data>
+  <data name="Loc_Reg_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Loc_Reg_Email_Err0" xml:space="preserve">
+    <value>This email alredy exist!</value>
+  </data>
+  <data name="Loc_Reg_Email_Err1" xml:space="preserve">
+    <value>Email have not right format!</value>
+  </data>
+  <data name="Loc_Reg_Error" xml:space="preserve">
+    <value>Registration error!</value>
+  </data>
+  <data name="Loc_Reg_FName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="Loc_Reg_Label" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="Loc_Reg_LName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Loc_Reg_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Loc_Reg_Pass_Err" xml:space="preserve">
+    <value>Password dont equals!</value>
+  </data>
+  <data name="Loc_Reg_RepeatPassword" xml:space="preserve">
+    <value>Repeat password</value>
+  </data>
+  <data name="Loc_Reg_Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Log_Reg_RetToLogin" xml:space="preserve">
+    <value>Back to login</value>
   </data>
 </root>

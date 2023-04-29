@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:cui="clr-namespace:PCBuilder.CustomUI">
+    <Style TargetType="{x:Type cui:CircleButton}">
+        <Setter Property="Radius" Value="12"/>
+    </Style>
+</ResourceDictionary>
