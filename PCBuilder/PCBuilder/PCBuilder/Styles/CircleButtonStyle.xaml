@@ -1,7 +1,56 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:cui="clr-namespace:PCBuilder.CustomUI">
-    <Style TargetType="{x:Type cui:CircleButton}">
-        <Setter Property="Radius" Value="12"/>
+    <Style x:Key="CB_DEF" TargetType="{x:Type cui:CircleButton}">
+        <Setter Property="Radius" Value="64"/>
+        <Setter Property="BorderSize" Value="3"/>
+        <Setter Property="Color" Value="#5578F4"/>
+        <Setter Property="SelectedColor" Value="#8CA5FC"/>
+        <Setter Property="BorderColor" Value="#314FBA"/>
+        <Setter Property="ImageSource" Value="../Resources/catalog.png"/>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation Storyboard.TargetProperty="Color.Color"
+                                        From="#6a89fb" To="#5578F4" Duration="0:0:0.3"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseDown">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation Storyboard.TargetProperty="BorderColor.Color"
+                                        From="#4a67cf" To="#314FBA" Duration="0:0:0.3"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="CB_RED" TargetType="{x:Type cui:CircleButton}">
+        <Setter Property="Radius" Value="64"/>
+        <Setter Property="BorderSize" Value="3"/>
+        <Setter Property="Color" Value="#F45555"/>
+        <Setter Property="SelectedColor" Value="#fab7b7"/>
+        <Setter Property="BorderColor" Value="#BA3131"/>
+        <Setter Property="ImageSource" Value="../Resources/catalog.png"/>
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation Storyboard.TargetProperty="Color.Color"
+                                        From="#f78787" To="#F45555" Duration="0:0:0.3"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseDown">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation Storyboard.TargetProperty="BorderColor.Color"
+                                        From="#cf4a4a" To="#BA3131" Duration="0:0:0.3"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

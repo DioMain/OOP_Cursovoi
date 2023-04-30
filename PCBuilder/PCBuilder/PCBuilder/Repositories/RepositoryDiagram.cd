@@ -88,7 +88,7 @@
     </TypeIdentifier>
   </Interface>
   <Enum Name="PCBuilder.Repositories.DataBaseErrorType" Collapsed="true">
-    <Position X="11.5" Y="2.25" Width="1.75" />
+    <Position X="11.25" Y="2.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAQAAABBAAAAAAAAIAQAAAAAAAAA=</HashCode>
       <FileName>Repositories\DataBaseManager.cs</FileName>

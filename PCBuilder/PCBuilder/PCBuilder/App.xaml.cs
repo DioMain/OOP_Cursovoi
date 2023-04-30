@@ -21,7 +21,7 @@ namespace PCBuilder
 
             LocalizationManager.CreateInstance(this);
 
-            LocalizationManager.Instance.SetLang(Language.ENG);
+            //LocalizationManager.Instance.SetLang(Language.ENG);
         }
     }
 }

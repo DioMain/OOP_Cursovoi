@@ -22,6 +22,8 @@ namespace PCBuilder.Repositories
 
         private DataBase _dataBase;
 
+        public bool IsConnected { get; private set; }
+
         public UserRepository Users { get; private set; }
         public OrderRepository Orders { get; private set; }
         public OrderItemRepository OrderItems { get; private set; }
@@ -75,6 +77,17 @@ namespace PCBuilder.Repositories
                     _dataBase.SaveChanges();
                 }
 
+                Users = new UserRepository(_dataBase);
+                Orders = new OrderRepository(_dataBase);
+                OrderItems = new OrderItemRepository(_dataBase);
+                Products = new ProductRepository(_dataBase);
+                Performances = new PerformanceRepository(_dataBase);
+                Templates = new TemplateRepository(_dataBase);
+                TemplateItems = new TemplateItemRepository(_dataBase);
+                Comments = new CommentRepository(_dataBase);
+
+                IsConnected = true;
+
                 OnConnected?.Invoke();
             }
             catch (SystemException Error)
@@ -125,6 +138,17 @@ namespace PCBuilder.Repositories
                     await _dataBase.SaveChangesAsync();
                 }
 
+                Users = new UserRepository(_dataBase);
+                Orders = new OrderRepository(_dataBase);
+                OrderItems = new OrderItemRepository(_dataBase);
+                Products = new ProductRepository(_dataBase);
+                Performances = new PerformanceRepository(_dataBase);
+                Templates = new TemplateRepository(_dataBase);
+                TemplateItems = new TemplateItemRepository(_dataBase);
+                Comments = new CommentRepository(_dataBase);
+
+                IsConnected = true;
+
                 OnConnected?.Invoke();
             }
             catch (SystemException Error)
@@ -140,6 +164,9 @@ namespace PCBuilder.Repositories
 
         public void DropError(string message, DataBaseErrorType errorType)
         {
+            if (errorType == DataBaseErrorType.ConnectionFailed)
+                IsConnected = false;
+
             OnError?.Invoke(message, errorType);
         }
         public void DropSuccess(object obj, string note = "")

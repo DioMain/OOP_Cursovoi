@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="PCBuilder.ViewModel.BaseViewModel">
-    <Position X="5" Y="3" Width="2" />
+    <Position X="0.5" Y="3" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\BaseViewModel.cs</FileName>
@@ -9,24 +9,38 @@
     <Lollipop Orientation="Bottom" Position="0.158" />
   </Class>
   <Class Name="PCBuilder.ViewModel.LoginWindowVM">
-    <Position X="13.5" Y="2.25" Width="1.5" />
+    <Position X="11.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AACABAAAACYAAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAA=</HashCode>
+      <HashCode>AACAFAAAACMIAAAAAAABAggAAAAQAAAACAAAAQAAAAA=</HashCode>
       <FileName>ViewModel\LoginWindowVM.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PCBuilder.ViewModel.FrameViewModel&lt;F, W&gt;" Collapsed="true">
-    <Position X="7.25" Y="0.5" Width="1.5" />
+    <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
       <FileName>ViewModel\FrameViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PCBuilder.ViewModel.WindowViewModel&lt;T&gt;" Collapsed="true">
-    <Position X="13.5" Y="0.5" Width="1.5" />
+    <Position X="11.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>ViewModel\WindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.MainWindowVM" Collapsed="true">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\MainWindowVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.RegistrationWindowVM">
+    <Position X="7.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAkAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>ViewModel\RegistrationWindowVM.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

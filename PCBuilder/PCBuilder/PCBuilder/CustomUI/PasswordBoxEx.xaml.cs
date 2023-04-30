@@ -21,14 +21,14 @@ namespace PCBuilder.CustomUI
     /// </summary>
     public partial class PasswordBoxEx : UserControl
     {
-        public static readonly DependencyProperty PlaceholderProp;
+        public static readonly DependencyProperty PlaceholderProperty;
 
         public static readonly RoutedEvent ChangedEvent;
 
         public string Placeholder
         {
-            get { return (string)GetValue(PlaceholderProp); }
-            set { SetValue(PlaceholderProp, value); }
+            get { return (string)GetValue(PlaceholderProperty); }
+            set { SetValue(PlaceholderProperty, value); }
         }
 
         public event EventHandler Changed
@@ -46,7 +46,7 @@ namespace PCBuilder.CustomUI
 
         static PasswordBoxEx()
         {
-            PlaceholderProp = DependencyProperty.Register("Placeholder", typeof(string),
+            PlaceholderProperty = DependencyProperty.Register("Placeholder", typeof(string),
                 typeof(PasswordBoxEx), new PropertyMetadata(string.Empty, OnPlaceholderChanged));
 
             ChangedEvent = EventManager.RegisterRoutedEvent(

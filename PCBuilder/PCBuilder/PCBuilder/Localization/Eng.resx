@@ -120,6 +120,9 @@
   <data name="Loc_Global_EmptyField" xml:space="preserve">
     <value>Empty field</value>
   </data>
+  <data name="Loc_Global_NotRightFormat" xml:space="preserve">
+    <value>Not right format!</value>
+  </data>
   <data name="Loc_Login_Button" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -150,17 +153,11 @@
   <data name="Loc_Reg_ContNum" xml:space="preserve">
     <value>Contact number</value>
   </data>
-  <data name="Loc_Reg_ContNum_Err" xml:space="preserve">
-    <value>Contact number have not right format!</value>
-  </data>
   <data name="Loc_Reg_Email" xml:space="preserve">
     <value>Email</value>
   </data>
   <data name="Loc_Reg_Email_Err0" xml:space="preserve">
     <value>This email alredy exist!</value>
-  </data>
-  <data name="Loc_Reg_Email_Err1" xml:space="preserve">
-    <value>Email have not right format!</value>
   </data>
   <data name="Loc_Reg_Error" xml:space="preserve">
     <value>Registration error!</value>
@@ -183,10 +180,10 @@
   <data name="Loc_Reg_RepeatPassword" xml:space="preserve">
     <value>Repeat password</value>
   </data>
+  <data name="Loc_Reg_RetToLogin" xml:space="preserve">
+    <value>Back to login</value>
+  </data>
   <data name="Loc_Reg_Submit" xml:space="preserve">
     <value>Submit</value>
-  </data>
-  <data name="Log_Reg_RetToLogin" xml:space="preserve">
-    <value>Back to login</value>
   </data>
 </root>

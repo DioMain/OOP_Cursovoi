@@ -24,7 +24,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Comment_Add");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
             }
@@ -40,7 +40,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Comment_Delete");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.DeleteError);
             }
@@ -56,7 +56,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Comment_Get");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.GetError);
             }
@@ -74,7 +74,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Comment_GetAll");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.GetError);
             }
@@ -97,7 +97,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Comment_Update");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.UpdateError);
             }

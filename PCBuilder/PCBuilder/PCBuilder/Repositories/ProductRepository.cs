@@ -24,7 +24,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Product_Add");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
             }
@@ -40,7 +40,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Product_Delete");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.DeleteError);
             }
@@ -56,7 +56,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Product_Get");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.GetError);
             }
@@ -74,7 +74,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Product_GetAll");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.GetError);
             }
@@ -100,7 +100,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Product_Update");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.UpdateError);
             }

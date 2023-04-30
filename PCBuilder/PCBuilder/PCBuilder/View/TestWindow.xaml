@@ -21,7 +21,7 @@
             <TextBlock x:Name="t2" Canvas.Top="200" Height="20"/>
             <TextBlock x:Name="t3" Canvas.Top="250" Height="20" FontSize="18"/>
             <Button Canvas.Top="300" Height="25" Content="To login Window" Click="Button_Click_1"/>
-            <cui:CircleButton Canvas.Top="350" Color="Red" Radius="32" ImageSource="/Resources/catalog.png"/>
+            <cui:CircleButton ClickCommand="{Binding Click}"/>
         </Canvas>
 
         <Image Source="/Resources/LoadEllipse.png" VerticalAlignment="Center" HorizontalAlignment="Center" 

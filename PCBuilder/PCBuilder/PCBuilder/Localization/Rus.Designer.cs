@@ -70,6 +70,15 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Не правильный формат!.
+        /// </summary>
+        public static string Loc_Global_NotRightFormat {
+            get {
+                return ResourceManager.GetString("Loc_Global_NotRightFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Вход.
         /// </summary>
         public static string Loc_Login_Button {
@@ -160,15 +169,6 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Контактный телефон имеет не правильный формат.
-        /// </summary>
-        public static string Loc_Reg_ContNum_Err {
-            get {
-                return ResourceManager.GetString("Loc_Reg_ContNum_Err", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Ищет локализованную строку, похожую на Почта.
         /// </summary>
         public static string Loc_Reg_Email {
@@ -183,15 +183,6 @@ namespace PCBuilder.Localization {
         public static string Loc_Reg_Email_Err0 {
             get {
                 return ResourceManager.GetString("Loc_Reg_Email_Err0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Почта имеет не правильный формат!.
-        /// </summary>
-        public static string Loc_Reg_Email_Err1 {
-            get {
-                return ResourceManager.GetString("Loc_Reg_Email_Err1", resourceCulture);
             }
         }
         
@@ -259,20 +250,20 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Вернуться к входу.
+        /// </summary>
+        public static string Loc_Reg_RetToLogin {
+            get {
+                return ResourceManager.GetString("Loc_Reg_RetToLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Подтвердить.
         /// </summary>
         public static string Loc_Reg_Submit {
             get {
                 return ResourceManager.GetString("Loc_Reg_Submit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Вернуться к входу.
-        /// </summary>
-        public static string Log_Reg_RetToLogin {
-            get {
-                return ResourceManager.GetString("Log_Reg_RetToLogin", resourceCulture);
             }
         }
     }

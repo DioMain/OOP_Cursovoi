@@ -1,4 +1,5 @@
-﻿using PCBuilder.Model;
+﻿using PCBuilder.Commands;
+using PCBuilder.Model;
 using PCBuilder.Repositories;
 using System;
 using System.Collections.Generic;
@@ -28,12 +29,30 @@ namespace PCBuilder.View
         {
             InitializeComponent();
 
+            DataContext = this;
+
             t0.Text = "null";
             t1.Text = "null";
             t2.Text = "false";
 
             _hash0 = "";
             _hash1 = "";
+        }
+
+        private BaseCommand ClickCommand;
+        public ICommand Click
+        {
+            get
+            {
+                if (ClickCommand == null)
+                    ClickCommand = new BaseCommand(ClickExecuted);
+
+                return ClickCommand;
+            }
+        }
+        private void ClickExecuted(object obj)
+        {
+            MessageBox.Show("Work");
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)

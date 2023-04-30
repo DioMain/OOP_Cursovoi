@@ -6,15 +6,15 @@
         <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="Background" Value="White"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Window">
-                    <Border Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
-                            CornerRadius="9">
-
-                        <Grid x:Name="Test">
+                            CornerRadius="9" >
+                        <Grid>
                             <cui:UpWindowPanel Panel.ZIndex="1000"/>
 
                             <ContentPresenter Content="{TemplateBinding Content}"

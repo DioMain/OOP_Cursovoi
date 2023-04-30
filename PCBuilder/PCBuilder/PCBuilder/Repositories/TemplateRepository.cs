@@ -24,7 +24,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Template_Add");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
             }
@@ -40,7 +40,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Template_Delete");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.DeleteError);
             }
@@ -56,7 +56,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Template_Get");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.GetError);
             }
@@ -74,7 +74,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Template_GetAll");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.GetError);
             }
@@ -96,7 +96,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Template_Update");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.UpdateError);
             }

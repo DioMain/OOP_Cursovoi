@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,9 @@ namespace PCBuilder.Model
 {
     public class User
     {
+        [NotMapped]
+        public static User Current { get; set; }
+
         [Key]
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -16,6 +20,7 @@ namespace PCBuilder.Model
 
         public string Email { get; set; }
         public string Address { get; set; }
+        public string ContactNumber { get; set; }
         public string Password { get; set; }
 
         public string Rights { get; set; }

@@ -18,7 +18,7 @@
     <Grid Background="Transparent">
         <Grid x:Name="Loading">
             <Image Source="/Resources/LoadEllipse.png" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                   Margin="110,0,110,0" RenderTransformOrigin="0.5, 0.5">
+                   Margin="110,0,110,0" RenderTransformOrigin="0.5, 0.5" RenderOptions.BitmapScalingMode="HighQuality">
                 <Image.RenderTransform>
                     <RotateTransform x:Name="AnimatedRotateTransform" Angle="0" />
                 </Image.RenderTransform>
@@ -39,14 +39,16 @@
                 <TextBlock Style="{StaticResource H2Text}" Text="{DynamicResource Loc_Login_LoadError}" 
                            FontSize="20" Margin="0,125,0,0"/>
                 <Button Style="{StaticResource CustomButton}" Height="38" Content="{DynamicResource Loc_Login_RetryButton}" 
-                        FontSize="14" Margin="0,25,0,0" Width="110"/>
+                        FontSize="14" Margin="0,25,0,0" Width="110" Command="{Binding Reload}"/>
             </StackPanel>
         </Grid>
         <Grid x:Name="Main">
             <StackPanel Margin="30,50,40,0">
                 <TextBlock Style="{StaticResource H1Text}" Text="{DynamicResource Loc_Login_Label}"/>
-                <cui:TextBoxEx Height="46" Margin="0,100,0,0" Placeholder="{DynamicResource Loc_Login_EmailPlaceholder}"/>
-                <cui:PasswordBoxEx Height="46" Margin="0,19,0,0" Placeholder="{DynamicResource Loc_Login_PasswordPlaceholder}"/>
+                
+                <cui:TextBoxEx x:Name="emailBox" Height="46" Margin="0,100,0,0" Placeholder="{DynamicResource Loc_Login_EmailPlaceholder}"/>
+                <cui:PasswordBoxEx x:Name="passwordBox" Height="46" Margin="0,19,0,0" Placeholder="{DynamicResource Loc_Login_PasswordPlaceholder}"/>
+                
                 <TextBlock Style="{StaticResource HyperTextLogin}" Text="{DynamicResource Loc_Login_RegisterHypertext}" Margin="0,2,0,0">
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseDown">
@@ -54,8 +56,15 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </TextBlock>
-                <Button Style="{StaticResource CustomButton}" Height="49" Content="{DynamicResource Loc_Login_Button}" Margin="0,45,0,0" Width="162"/>
-                <TextBlock Style="{StaticResource H2Text}" Foreground="Red" Text="Error" FontSize="16"/>
+
+                <Button Style="{StaticResource CustomButton}" Height="49" Content="{DynamicResource Loc_Login_Button}" Margin="0,45,0,0" Width="162">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click">
+                            <i:InvokeCommandAction Command="{Binding Submit}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <TextBlock Style="{StaticResource H2Text}" x:Name="errorMessage" Foreground="Red" Text="{DynamicResource Loc_Login_LoginError}" FontSize="16"/>
             </StackPanel>
         </Grid>
     </Grid>

@@ -6,8 +6,34 @@
              xmlns:local="clr-namespace:PCBuilder.CustomUI"
              mc:Ignorable="d" x:Name="control"
              d:DesignHeight="64" d:DesignWidth="64">
-    <Grid>
-        <Ellipse x:Name="ell"/>
-        <Image x:Name="img"/>
+    <UserControl.Style>
+        <Style TargetType="UserControl">
+            <Setter Property="local:CircleButton.Radius" Value="64"/>
+            <Setter Property="local:CircleButton.Color" Value="#5578F4"/>
+            <Setter Property="local:CircleButton.ImageSource" Value="../Resources/catalog.png"/>
+            <Setter Property="local:CircleButton.BorderColor" Value="#314FBA"/>
+            <Setter Property="local:CircleButton.SelectedColor" Value="#8CA5FC"/>
+            <Setter Property="local:CircleButton.BorderSize" Value="4"/>
+            <Setter Property="local:CircleButton.IsSelected" Value="False"/>
+        </Style>
+    </UserControl.Style>
+    <Grid MouseDown="Ellipse_MouseDown">
+        <Ellipse x:Name="nonSelected" 
+                 Width="{Binding Radius, ElementName=control}" 
+                 Fill="{Binding Color, ElementName=control}"
+                 StrokeThickness="{Binding BorderSize, ElementName=control}" 
+                 Height="{Binding Radius, ElementName=control}" 
+                 Stroke="{Binding BorderColor, ElementName=control}"/>
+
+        <Ellipse x:Name="selected" Visibility="Collapsed"
+                 Width="{Binding Radius, ElementName=control}" 
+                 Fill="{Binding SelectedColor, ElementName=control}"
+                 StrokeThickness="{Binding BorderSize, ElementName=control}" 
+                 Height="{Binding Radius, ElementName=control}" 
+                 Stroke="{Binding BorderColor, ElementName=control}"/>
+
+        <Image x:Name="img" Source="{Binding ImageSource, ElementName=control}"
+               VerticalAlignment="Center" HorizontalAlignment="Center" 
+               RenderOptions.BitmapScalingMode="HighQuality"/>
     </Grid>
 </UserControl>

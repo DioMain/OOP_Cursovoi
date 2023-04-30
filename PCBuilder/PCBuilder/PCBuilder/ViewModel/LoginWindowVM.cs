@@ -1,4 +1,5 @@
 ﻿using PCBuilder.Commands;
+using PCBuilder.Model;
 using PCBuilder.Repositories;
 using PCBuilder.View;
 using System;
@@ -20,17 +21,23 @@ namespace PCBuilder.ViewModel
         {
             SetState();
 
+            owner.errorMessage.Visibility = Visibility.Hidden;
+
             DataBaseManager.CreateInstance();
 
             DataBaseManager.Instance.OnConnected += DataBase_OnConnected;
             DataBaseManager.Instance.OnError += DataBase_OnError;
 
-            DataBaseManager.Instance.ConnectAsync();
+            if (!DataBaseManager.Instance.IsConnected) 
+                DataBaseManager.Instance.ConnectAsync();
+            else
+                SetState(2);
         }
 
         private void DataBase_OnError(string message, DataBaseErrorType errorType)
         {
-            SetState(1);
+            if (errorType == DataBaseErrorType.ConnectionFailed)
+                SetState(1);
         }
         private void DataBase_OnConnected()
         {
@@ -88,6 +95,80 @@ namespace PCBuilder.ViewModel
 
             Owner.Close();
         }
+
+        #endregion
+
+        #region Submit
+
+        private BaseCommand SubmitCommand;
+        public ICommand Submit
+        {
+            get
+            {
+                if (SubmitCommand == null)
+                    SubmitCommand = new BaseCommand(SubmitExecuted, SubmitCanExecuted);
+
+                return SubmitCommand;
+            }
+        }
+        private bool SubmitCanExecuted(object obj)
+        {
+            if (!DataBaseManager.Instance.IsConnected)
+                return false;
+
+            User user = DataBaseManager.Instance.Users.GetByEmail(Owner.emailBox.Text);
+
+            if (user == null)
+            {
+                Owner.errorMessage.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            if (!PasswordHasher.Compare(user.Password, Owner.passwordBox.Password))
+            {
+                Owner.errorMessage.Visibility = Visibility.Visible;
+                return false;
+            }
+
+            User.Current = user;
+
+            return true;
+        }
+        private void SubmitExecuted(object obj)
+        {
+            User.Current.LastAuthDate = DateTime.Now;
+
+            DataBaseManager.Instance.Users.Update(User.Current);
+
+            MainWindow mainWindow = new MainWindow();
+
+            mainWindow.Show();
+
+            Owner.Close();
+        }
+
+        #endregion
+
+        #region Reload
+
+        private BaseCommand ReloadCommand;
+        public ICommand Reload
+        {
+            get
+            {
+                if (ReloadCommand == null)
+                    ReloadCommand = new BaseCommand(ReloadExecuted);
+
+                return ReloadCommand;
+            }
+        }
+        public void ReloadExecuted(object obj)
+        {
+            SetState();
+
+            DataBaseManager.Instance.ConnectAsync();
+        }
+        
 
         #endregion
 

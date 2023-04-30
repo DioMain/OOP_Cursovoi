@@ -10,14 +10,14 @@
         <Grid MouseDown="DockPanel_MouseDown" Background="Transparent" Panel.ZIndex="100">
             <Grid Width="17" Height="17" Margin="0,8,30,0" Background="Transparent" Cursor="Hand"
                   MouseDown="Image1_MouseDown" HorizontalAlignment="Right">
-                <Image Source="/Resources/Minimize.png"
+                <Image Source="/Resources/Minimize.png" RenderOptions.BitmapScalingMode="HighQuality"
                  HorizontalAlignment="Center" VerticalAlignment="Bottom">
                     <Image.Effect>
                         <DropShadowEffect BlurRadius="2" RenderingBias="Quality" ShadowDepth="0" Color="#3457D4"/>
                     </Image.Effect>
                 </Image>
             </Grid>
-            <Image Source="/Resources/CrestAppClose.png" Cursor="Hand"
+            <Image Source="/Resources/CrestAppClose.png" Cursor="Hand" RenderOptions.BitmapScalingMode="HighQuality"
                Margin="0,8,9,0" MouseDown="Image0_MouseDown" HorizontalAlignment="Right">
                 <Image.Effect>
                     <DropShadowEffect BlurRadius="2" RenderingBias="Quality" ShadowDepth="0" Color="#3457D4"/>

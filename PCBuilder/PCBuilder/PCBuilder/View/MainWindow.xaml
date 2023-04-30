@@ -1,0 +1,44 @@
+﻿<Window x:Class="PCBuilder.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCBuilder.View"
+        xmlns:cui="clr-namespace:PCBuilder.CustomUI" Background="White" ResizeMode="CanResize"
+        mc:Ignorable="d" WindowStyle="None" Style="{StaticResource LWindowStyle}"
+        Title="MainWindow" Height="647" Width="1060">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Styles/CircleButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="41*"/>
+            <ColumnDefinition Width="488*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#4268EF" CornerRadius="9,0,0,9">
+            <DockPanel>
+                <cui:CircleButton x:Name="userBut" DockPanel.Dock="Top" Margin="0,12,0,0" Style="{StaticResource CB_DEF}" Id="0" ClickCommand="{Binding SetSection}"
+                                  ImageSource="/Resources/user.png"/>
+                <cui:CircleButton x:Name="basketBut" DockPanel.Dock="Top" Margin="0,10,0,0" Style="{StaticResource CB_DEF}" Id="1" ClickCommand="{Binding SetSection}"
+                                  ImageSource="/Resources/basket.png"/>
+                <cui:CircleButton x:Name="catalogBut" DockPanel.Dock="Top" Margin="0,10,0,0" Style="{StaticResource CB_DEF}" Id="2" ClickCommand="{Binding SetSection}"
+                                  />
+                <cui:CircleButton x:Name="editorBut" DockPanel.Dock="Top" Margin="0,10,0,0" Style="{StaticResource CB_DEF}" Id="3" ClickCommand="{Binding SetSection}"
+                                  ImageSource="/Resources/pceditor.png"/>
+
+                <cui:CircleButton x:Name="optionsBut" DockPanel.Dock="Bottom" Margin="0,10,0,12" Style="{StaticResource CB_DEF}" Id="4" ClickCommand="{Binding SetSection}"
+                                  ImageSource="/Resources/options.png"/>
+                <cui:CircleButton x:Name="adminBut" DockPanel.Dock="Bottom" Margin="0,10,0,0" Style="{StaticResource CB_DEF}" Id="5" ClickCommand="{Binding SetSection}"
+                                  VerticalAlignment="Bottom" ImageSource="/Resources/layers.png"/>
+            </DockPanel>
+        </Border>
+        <Border Grid.Column="1" Background="White" CornerRadius="0,9,9,0">
+            <Frame/>
+        </Border>
+    </Grid>
+</Window>

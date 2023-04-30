@@ -24,7 +24,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Order_Add");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
             }
@@ -40,7 +40,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Order_Delete");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
             }
@@ -56,7 +56,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Order_Get");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
             }
@@ -74,7 +74,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Order_GetAll");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
             }
@@ -98,7 +98,7 @@ namespace PCBuilder.Repositories
 
                 DataBaseManager.Instance.DropSuccess(null, "Order_Update");
             }
-            catch (DbException Error)
+            catch (SystemException Error)
             {
                 DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
             }
