@@ -1,0 +1,40 @@
+﻿<Page x:Class="PCBuilder.View.Frames.UserFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PCBuilder.View.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="645" d:DesignWidth="976"
+      Title="UserFrame">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#5F7FF0" Grid.Row="0" CornerRadius="0,9,0,0">
+            <Grid>
+                <TextBlock Text="User" Style="{StaticResource H0Text}" Margin="0,23,0,0"/>
+            </Grid>
+        </Border>
+        <ScrollViewer Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="35,20,25,0" Orientation="Vertical">
+                <TextBlock x:Name="nameBox" Text="Name" Style="{StaticResource H1TextB}"/>
+                <StackPanel Orientation="Horizontal" Margin="0,7,0,0">
+                    <TextBlock x:Name="fnameBox" DockPanel.Dock="Left" Text="FName" Style="{StaticResource SimpleTextB}" Width="425"/>
+                    <TextBlock x:Name="lnameBox" DockPanel.Dock="Right" Text="SName" Style="{StaticResource SimpleTextB}"/>
+                </StackPanel>
+                <TextBlock Text="Email" Style="{StaticResource H1TextB}" Margin="0,14,0,0"/>
+                <TextBlock x:Name="emailBox" Text="Some email" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
+                <TextBlock Text="Address" Style="{StaticResource H1TextB}" Margin="0,14,0,0"/>
+                <TextBlock x:Name="addressBox" Text="Some address" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
+                <TextBlock Text="Contact number" Style="{StaticResource H1TextB}" Margin="0,14,0,0"/>
+                <TextBlock x:Name="contNumBox" Text="Some number" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
+
+                <TextBlock Text="Тут ещё должена быть история заказов" Style="{StaticResource SimpleTextB}" Margin="0,131,0,0"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

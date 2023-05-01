@@ -147,6 +147,9 @@
   <data name="Loc_Login_RetryButton" xml:space="preserve">
     <value>Retry</value>
   </data>
+  <data name="Loc_MP_Submit" xml:space="preserve">
+    <value>Ok</value>
+  </data>
   <data name="Loc_Reg_Address" xml:space="preserve">
     <value>Address</value>
   </data>
@@ -176,6 +179,12 @@
   </data>
   <data name="Loc_Reg_Pass_Err" xml:space="preserve">
     <value>Password dont equals!</value>
+  </data>
+  <data name="Loc_Reg_Popup_Message" xml:space="preserve">
+    <value>You successful registred</value>
+  </data>
+  <data name="Loc_Reg_Popup_Title" xml:space="preserve">
+    <value>Success</value>
   </data>
   <data name="Loc_Reg_RepeatPassword" xml:space="preserve">
     <value>Repeat password</value>

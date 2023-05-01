@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PCBuilder.View"
-        xmlns:cui="clr-namespace:PCBuilder.CustomUI" Background="White" ResizeMode="CanResize"
+        xmlns:cui="clr-namespace:PCBuilder.CustomUI" Background="White" ResizeMode="CanMinimize"
         mc:Ignorable="d" WindowStyle="None" Style="{StaticResource LWindowStyle}"
         Title="MainWindow" Height="647" Width="1060">
     <Window.Resources>
@@ -37,8 +37,8 @@
                                   VerticalAlignment="Bottom" ImageSource="/Resources/layers.png"/>
             </DockPanel>
         </Border>
-        <Border Grid.Column="1" Background="White" CornerRadius="0,9,9,0">
-            <Frame/>
+        <Border Grid.Column="1" Background="White" CornerRadius="0,9,9,0" >
+            <Frame x:Name="frameSection" NavigationUIVisibility="Hidden"/>
         </Border>
     </Grid>
 </Window>

@@ -22,12 +22,17 @@
             <TextBlock x:Name="t3" Canvas.Top="250" Height="20" FontSize="18"/>
             <Button Canvas.Top="300" Height="25" Content="To login Window" Click="Button_Click_1"/>
             <cui:CircleButton ClickCommand="{Binding Click}"/>
+            <ComboBox Canvas.Top="337" Style="{StaticResource CustomComboBox}" Height="47" Width="226" Canvas.Left="4">
+                <ComboBoxItem Content="item 1"/>
+                <ComboBoxItem Content="item 2"/>
+                <ComboBoxItem Content="item 3"/>
+            </ComboBox>
         </Canvas>
 
         <Image Source="/Resources/LoadEllipse.png" VerticalAlignment="Center" HorizontalAlignment="Center" 
                    Margin="110,0,110,0" RenderTransformOrigin="0.5, 0.5">
             <Image.RenderTransform>
-            <RotateTransform x:Name="AnimatedRotateTransform" Angle="0" />
+                <RotateTransform x:Name="AnimatedRotateTransform" Angle="0" />
             </Image.RenderTransform>
             <Image.Triggers>
                 <EventTrigger RoutedEvent="Loaded">

@@ -9,15 +9,16 @@ using System.Windows.Controls;
 namespace PCBuilder.ViewModel
 {
     public abstract class FrameViewModel<F, W> : BaseViewModel
-        where F : Frame
+        where F : Page
         where W : Window
     {
         public F Owner { get; private set; }
-        public W OnwerWindow { get; private set; }
+        public W OwnerWindow { get; private set; }
 
-        public FrameViewModel(F owner)
+        public FrameViewModel(F owner, W window)
         {
             Owner = owner;
+            OwnerWindow = window;
         }
     }
 }

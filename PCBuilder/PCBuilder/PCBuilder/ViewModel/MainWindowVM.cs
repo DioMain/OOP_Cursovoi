@@ -2,6 +2,7 @@
 using PCBuilder.CustomUI;
 using PCBuilder.Model;
 using PCBuilder.View;
+using PCBuilder.View.Frames;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -88,7 +89,7 @@ namespace PCBuilder.ViewModel
             switch (sectionId)
             {
                 case 0:
-                    
+                    Owner.frameSection.Content = new UserFrame(Owner);
                     break;
                 case 1:
                     break;

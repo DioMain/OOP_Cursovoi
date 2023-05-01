@@ -151,6 +151,15 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Ok.
+        /// </summary>
+        public static string Loc_MP_Submit {
+            get {
+                return ResourceManager.GetString("Loc_MP_Submit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Address.
         /// </summary>
         public static string Loc_Reg_Address {
@@ -237,6 +246,24 @@ namespace PCBuilder.Localization {
         public static string Loc_Reg_Password {
             get {
                 return ResourceManager.GetString("Loc_Reg_Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на You successful registred.
+        /// </summary>
+        public static string Loc_Reg_Popup_Message {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Popup_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Success.
+        /// </summary>
+        public static string Loc_Reg_Popup_Title {
+            get {
+                return ResourceManager.GetString("Loc_Reg_Popup_Title", resourceCulture);
             }
         }
         

@@ -2,6 +2,7 @@
 using PCBuilder.Model;
 using PCBuilder.Repositories;
 using PCBuilder.View;
+using PCBuilder.View.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -157,7 +158,11 @@ namespace PCBuilder.ViewModel
 
             DataBaseManager.Instance.Users.Add(nuser);
 
-            MessageBox.Show("You registered");
+            new MessagePopup(
+                (string)Application.Current.Resources["Loc_Reg_Popup_Title"],
+                (string)Application.Current.Resources["Loc_Reg_Popup_Message"],
+                true
+                ).ShowDialog();
 
             LoginWindow login = new LoginWindow();
             login.Show();

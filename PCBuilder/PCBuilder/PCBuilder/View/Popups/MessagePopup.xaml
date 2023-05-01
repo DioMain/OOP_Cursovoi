@@ -1,0 +1,15 @@
+﻿<Window x:Class="PCBuilder.View.Popups.MessagePopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCBuilder.View.Popups" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" Style="{StaticResource LWindowStyle}" WindowStyle="None" ResizeMode="NoResize"
+        Title="MessagePopup" Height="217" Width="452" Background="#4268EF">
+    <StackPanel Orientation="Vertical">
+        <TextBlock x:Name="titleBox" Style="{StaticResource H1Text}" Text="Tittle" Margin="0,28,0,0"/>
+        <TextBlock x:Name="messageBox" Style="{StaticResource SimpleText}" Text="Message" Margin="30,20,30,10" Width="395" Height="69"/>
+        <Button Style="{StaticResource CustomButton}" Width="130" Height="40" Click="Button_Click"
+                Content="{DynamicResource Loc_MP_Submit}"/>
+    </StackPanel>
+</Window>
