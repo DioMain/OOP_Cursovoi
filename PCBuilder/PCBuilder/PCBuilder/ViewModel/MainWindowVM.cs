@@ -9,12 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace PCBuilder.ViewModel
 {
     public class MainWindowVM : WindowViewModel<MainWindow>
     {
+        private Page _sectionPage;
+
         #region Properties
 
         private int sectionId;
@@ -30,6 +33,7 @@ namespace PCBuilder.ViewModel
                 OnPropertyChanged(nameof(SectionId));
             }
         }
+
 
         #endregion
 
@@ -76,8 +80,9 @@ namespace PCBuilder.ViewModel
                     break;
             }
         }
+
         /// <summary>
-        /// Change current section
+        /// Сменает текущую секцию на другую
         /// </summary>
         /// <param name="sectionId">0 - user; 1 - basket; 2 - catalog; 3 - editor; 4 - options; 5 - admin</param>
         public void ChangeSection(int sectionId)
@@ -89,11 +94,12 @@ namespace PCBuilder.ViewModel
             switch (sectionId)
             {
                 case 0:
-                    Owner.frameSection.Content = new UserFrame(Owner);
+                    _sectionPage = new UserFrame(Owner);
                     break;
                 case 1:
                     break;
                 case 2:
+                    _sectionPage = new CatalogFrame(Owner);
                     break;
                 case 3:
                     break;
@@ -102,7 +108,20 @@ namespace PCBuilder.ViewModel
                 case 5:
                     break;
             }
+
+            ApplySection();
         }
+
+        /// <summary>
+        /// Применяет страницу секции
+        /// </summary>
+        public void ApplySection() => Owner.frameSection.Content = _sectionPage;
+
+        /// <summary>
+        /// Сменяет сраницу не меняя секции
+        /// </summary>
+        /// <param name="page"></param>
+        public void SetFrame(Page page) => Owner.frameSection.Content = page;
 
         #region Commands
 

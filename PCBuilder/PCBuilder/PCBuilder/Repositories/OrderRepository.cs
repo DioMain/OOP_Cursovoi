@@ -81,6 +81,23 @@ namespace PCBuilder.Repositories
 
             return result;
         }
+        public List<OrderItem> GetItems(Order item)
+        {
+            List<OrderItem> result = null;
+
+            try
+            {
+                result = _dataBase.OrderItems.Where(i => i.OrderId == item.Id).ToList();
+
+                DataBaseManager.Instance.DropSuccess(null, "Order_GetItems");
+            }
+            catch (SystemException Error)
+            {
+                DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
+            }
+
+            return result;
+        }
 
         public override void Update(Order item)
         {

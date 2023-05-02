@@ -82,6 +82,24 @@ namespace PCBuilder.Repositories
             return result;
         }
 
+        public List<Performance> GetPerformances(Product item)
+        {
+            List<Performance> result = null;
+
+            try
+            {
+                result = _dataBase.Performances.Where(i => i.ProductId == item.Id).ToList();
+
+                DataBaseManager.Instance.DropSuccess(null, "Product_GetPerformances");
+            }
+            catch (SystemException Error)
+            {
+                DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.GetError);
+            }
+
+            return result;
+        }
+
         public override void Update(Product item)
         {
             try

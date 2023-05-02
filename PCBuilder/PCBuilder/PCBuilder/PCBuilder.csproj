@@ -123,7 +123,8 @@
     <Compile Include="Model\DataBase.cs" />
     <Compile Include="Model\Order.cs" />
     <Compile Include="Model\OrderItem.cs" />
-    <Compile Include="Model\PasswordHasher.cs" />
+    <Compile Include="Utilities\ImageManager.cs" />
+    <Compile Include="Utilities\PasswordHasher.cs" />
     <Compile Include="Model\Performance.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\Template.cs" />
@@ -141,12 +142,17 @@
     <Compile Include="Repositories\TemplateRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\CatalogFrameVM.cs" />
     <Compile Include="ViewModel\FrameViewModel.cs" />
     <Compile Include="ViewModel\LoginWindowVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="ViewModel\ProductVM.cs" />
     <Compile Include="ViewModel\RegistrationWindowVM.cs" />
     <Compile Include="ViewModel\UserFrameVM.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
+    <Compile Include="View\Frames\CatalogFrame.xaml.cs">
+      <DependentUpon>CatalogFrame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Frames\UserFrame.xaml.cs">
       <DependentUpon>UserFrame.xaml</DependentUpon>
     </Compile>
@@ -276,6 +282,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\TextStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Frames\CatalogFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

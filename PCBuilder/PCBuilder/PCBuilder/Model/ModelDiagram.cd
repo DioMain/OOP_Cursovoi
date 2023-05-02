@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
   <Class Name="PCBuilder.Model.DataBase">
     <Position X="0.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
@@ -38,14 +38,14 @@
   <Class Name="PCBuilder.Model.User">
     <Position X="2.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAEAAACgAAAAAAAAAAAAAAAAAAAACAACAAAAAAAg=</HashCode>
+      <HashCode>AAACAFAAACgAAAAAAACAAAAAAAAAAAACAACAAAAAAAg=</HashCode>
       <FileName>Model\User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PCBuilder.Model.Template">
     <Position X="11.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAADAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <HashCode>AAADAAAAAAAgAAACAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Template.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -68,8 +68,8 @@
       <FileName>Model\Order.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="PCBuilder.Model.PerformanceDependency" Collapsed="true">
-    <Position X="9.75" Y="1.25" Width="1.5" />
+  <Enum Name="PCBuilder.Model.PerformanceDependency">
+    <Position X="9.75" Y="1.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAABAEAAAA=</HashCode>
       <FileName>Model\Performance.cs</FileName>

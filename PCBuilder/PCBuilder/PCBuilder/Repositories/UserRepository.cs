@@ -100,6 +100,41 @@ namespace PCBuilder.Repositories
             return result;
         }
 
+        public List<Order> GetOrders(User user)
+        {
+            List<Order> result = null;
+
+            try
+            {
+                result = _dataBase.Orders.Where(i => i.UserId == user.Id).ToList();
+
+                DataBaseManager.Instance.DropSuccess(null, "User_GetOrders");
+            }
+            catch (SystemException Error)
+            {
+                DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
+            }
+
+            return result;
+        }
+        public List<Template> GetTemplates(User user)
+        {
+            List<Template> result = null;
+
+            try
+            {
+                result = _dataBase.Templates.Where(i => i.CreatorId == user.Id).ToList();
+
+                DataBaseManager.Instance.DropSuccess(null, "User_GetTemplates");
+            }
+            catch (SystemException Error)
+            {
+                DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.CreateError);
+            }
+
+            return result;
+        }
+
         public override void Update(User item)
         {
             try

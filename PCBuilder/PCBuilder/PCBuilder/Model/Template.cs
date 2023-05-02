@@ -14,7 +14,7 @@ namespace PCBuilder.Model
         public int Id { get; set; }
 
         [ForeignKey("User")]
-        public int CreateId { get; set; }   
+        public int CreatorId { get; set; }   
         public User User { get; set; }
 
         public string Name { get; set; }

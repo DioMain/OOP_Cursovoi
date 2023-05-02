@@ -7,13 +7,6 @@
         xmlns:cui="clr-namespace:PCBuilder.CustomUI" Background="White" ResizeMode="CanMinimize"
         mc:Ignorable="d" WindowStyle="None" Style="{StaticResource LWindowStyle}"
         Title="MainWindow" Height="647" Width="1060">
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Styles/CircleButtonStyle.xaml"/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="41*"/>

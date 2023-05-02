@@ -81,6 +81,23 @@ namespace PCBuilder.Repositories
 
             return result;
         }
+        public List<TemplateItem> GetItems(Template item)
+        {
+            List<TemplateItem> result = null;
+
+            try
+            {
+                result = _dataBase.TemplateItems.Where(i => i.TemplateId == item.Id).ToList();
+
+                DataBaseManager.Instance.DropSuccess(null, "Template_GetAll");
+            }
+            catch (SystemException Error)
+            {
+                DataBaseManager.Instance.DropError(Error.Message, DataBaseErrorType.GetError);
+            }
+
+            return result;
+        }
 
         public override void Update(Template item)
         {
@@ -88,7 +105,7 @@ namespace PCBuilder.Repositories
             {
                 Template edit = _dataBase.Templates.Find(item.Id);
 
-                edit.CreateId = item.CreateId;
+                edit.CreatorId = item.CreatorId;
                 edit.Description = item.Description;
                 edit.Name = item.Name;
 
