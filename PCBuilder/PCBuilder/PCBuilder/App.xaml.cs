@@ -1,4 +1,5 @@
 ﻿using PCBuilder.Localization;
+using PCBuilder.Utilites;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

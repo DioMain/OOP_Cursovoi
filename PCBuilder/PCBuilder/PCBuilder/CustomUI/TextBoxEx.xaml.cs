@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,12 @@ namespace PCBuilder.CustomUI
     /// <summary>
     /// Логика взаимодействия для TextBoxEx.xaml
     /// </summary>
-    public partial class TextBoxEx : UserControl
+    public partial class TextBoxEx : UserControl, INotifyPropertyChanged
     {
         public static readonly DependencyProperty PlaceholderProperty;
+        public static readonly DependencyProperty OnlyNumbersProperty;
+
+        public static readonly DependencyProperty ChangedCommandProperty;
 
         public static readonly RoutedEvent ChangedEvent;
 
@@ -31,23 +35,60 @@ namespace PCBuilder.CustomUI
             set { SetValue(PlaceholderProperty, value); }
         }
 
+        public bool OnlyNumbers
+        {
+            get { return (bool)GetValue(OnlyNumbersProperty); }
+            set { SetValue(OnlyNumbersProperty, value); }
+        }
+
+        public ICommand ChangedCommand
+        {
+            get => GetValue(ChangedCommandProperty) as ICommand;
+            set => SetValue(ChangedCommandProperty, value);
+        }
+
         public event RoutedEventHandler Changed
         {
             add => AddHandler(ChangedEvent, value);
             remove => RemoveHandler(ChangedEvent, value);
         }
 
-        public string Text { get; private set; }
+        public string Text
+        {
+            get => box.Text;
+            set => box.Text = value;
+        }
 
         public bool IsEmpty { get; private set; }
 
         private Thickness _thickness;
         private double _fontsize;
 
+        public event PropertyChangedEventHandler PropertyChanged
+        {
+            add
+            {
+                ((INotifyPropertyChanged)control).PropertyChanged += value;
+            }
+
+            remove
+            {
+                ((INotifyPropertyChanged)control).PropertyChanged -= value;
+            }
+        }
+
         static TextBoxEx()
         {
             PlaceholderProperty = DependencyProperty.Register("Placeholder", typeof(string),
                 typeof(TextBoxEx), new PropertyMetadata(string.Empty, OnPlaceholderChanged));
+
+            ChangedCommandProperty = DependencyProperty.Register(
+                "ChangedCommand", typeof(ICommand), typeof(TextBoxEx)
+                );
+
+            OnlyNumbersProperty = DependencyProperty.Register(
+                "OnlyNumbers", typeof(bool), typeof(TextBoxEx), new PropertyMetadata(false)
+                );
 
             ChangedEvent = EventManager.RegisterRoutedEvent(
                 "Changed", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(TextBoxEx)
@@ -116,6 +157,12 @@ namespace PCBuilder.CustomUI
 
         private void Box_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (OnlyNumbers && !int.TryParse(box.Text, out _) && !string.IsNullOrEmpty(box.Text))
+            {
+                box.Text = Text;
+                return;
+            }
+                
             bool isEmpty = box.Text == string.Empty;
 
             if (!isEmpty && IsEmpty)
@@ -125,9 +172,13 @@ namespace PCBuilder.CustomUI
 
             IsEmpty = isEmpty;
 
-            Text = box.Text;
-
             RaiseEvent(new RoutedEventArgs(ChangedEvent, this));
+
+            if (ChangedCommand == null)
+                return;
+
+            if (ChangedCommand.CanExecute(this))
+                ChangedCommand.Execute(this);
         }
 
         private static void OnPlaceholderChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)

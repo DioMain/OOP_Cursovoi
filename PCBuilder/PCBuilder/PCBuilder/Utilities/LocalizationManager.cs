@@ -12,8 +12,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Xml.Linq;
+using PCBuilder.Localization;
 
-namespace PCBuilder.Localization
+namespace PCBuilder.Utilites
 {
     public class LocalizationManager
     {

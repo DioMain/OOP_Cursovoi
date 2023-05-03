@@ -150,6 +150,18 @@
   <data name="Loc_MP_Submit" xml:space="preserve">
     <value>Хорошо</value>
   </data>
+  <data name="Loc_Popup_Global_Failure" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Loc_Popup_Global_Success" xml:space="preserve">
+    <value>Успех</value>
+  </data>
+  <data name="Loc_Popup_ProdCart_Added" xml:space="preserve">
+    <value>Продукт добавлен в корзину</value>
+  </data>
+  <data name="Loc_ProdCart_ToBasket" xml:space="preserve">
+    <value>В корзину</value>
+  </data>
   <data name="Loc_Reg_Address" xml:space="preserve">
     <value>Адрес</value>
   </data>

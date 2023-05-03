@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace PCBuilder.Model
 {
+    [Serializable]
     public class Product
     {
         [Key]
@@ -27,20 +28,20 @@ namespace PCBuilder.Model
 
         public string Type { get; set; }
         [NotMapped]
-        public ProdcutType ProductType
+        public ProductType ProductType
         {
             get
             {
-                ProdcutType result;
+                ProductType result;
 
                 bool isParsed = Enum.TryParse(Type, true, out result);
 
-                return isParsed ? result : ProdcutType.Unknown;
+                return isParsed ? result : ProductType.Unknown;
             }
         }
     }
 
-    public enum ProdcutType
+    public enum ProductType
     {
         Unknown, CPU, GPU, RAM, Memory, Case, PowerUnit, MotherBroad
     }

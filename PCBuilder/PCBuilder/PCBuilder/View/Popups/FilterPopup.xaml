@@ -1,0 +1,21 @@
+﻿<Window x:Class="PCBuilder.View.Popups.FilterPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCBuilder.View.Popups"
+        xmlns:cui="clr-namespace:PCBuilder.CustomUI" Background="#4268EF"
+        mc:Ignorable="d" Style="{StaticResource LWindowStyle}" WindowStyle="None"
+        Title="FilterPopup" Height="300" Width="400">
+    <StackPanel Orientation="Vertical" Margin="50,0,50,0">
+        <TextBlock Style="{StaticResource H1Text}" Text="Filters" Margin="0,20,0,0"/>
+        <TextBlock Style="{StaticResource H2Text}" Text="Cost" Margin="0,5,0,0"/>
+        <DockPanel Height="40" Margin="0,5,0,0">
+            <cui:TextBoxEx DockPanel.Dock="Left" x:Name="contFrom"  Width="130" Placeholder="From"/>
+            <cui:TextBoxEx DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="contTo" Width="130" Placeholder="To"/>
+        </DockPanel>
+        <TextBlock Style="{StaticResource H2Text}" Text="Type" Margin="0,5,0,0"/>
+        <ComboBox x:Name="combo" Style="{StaticResource CustomComboBox}" Height="40" Margin="0,5,0,0" Width="200"/>
+        <Button Style="{StaticResource CustomButton}" Command="{Binding Submit}" Width="130" Height="40" Margin="0,20,0,0" Content="Confirm" FontSize="14"/>
+    </StackPanel>
+</Window>

@@ -8,22 +8,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using PCBuilder.Commands;
+using PCBuilder.CustomUI;
+using System.Windows.Input;
+using System.Windows;
+using System.Text.RegularExpressions;
+using PCBuilder.Filters;
+using PCBuilder.View.Popups;
 
 namespace PCBuilder.ViewModel
 {
     public class CatalogFrameVM : FrameViewModel<CatalogFrame, MainWindow>
     {
         private List<ProductVM> _products;
+
+        private List<ProductVM> _textFilteredProducts;
+
+        private List<ProductVM> _resultProducts;
+
+        private List<IFilter<ProductVM>> _filters;
+
         public List<ProductVM> Products
         {
-            get => _products;
+            get => _resultProducts;
             set
             {
-                _products = value;
+                _resultProducts = value;
                 OnPropertyChanged(nameof(Products));
             }
         }
-
+        
         public event Action OnResult;
 
         /// <summary>
@@ -34,18 +48,100 @@ namespace PCBuilder.ViewModel
         public CatalogFrameVM(CatalogFrame owner, MainWindow window, bool mode) : base(owner, window)
         {
             _products = new List<ProductVM>();
+            _filters = new List<IFilter<ProductVM>>();
 
             foreach (var item in DataBaseManager.Instance.Products.GetAll())
             {
                 _products.Add(new ProductVM(item, this));
             }
 
+            _textFilteredProducts = _products;
+            _resultProducts = _products;
+
+            owner.textFilterBox.Changed += (sender, args) => { FilterByText(); };
+
             Mode = mode;
+        }
+
+        private void FilterByText()
+        {
+            if (!string.IsNullOrWhiteSpace(Owner.textFilterBox.Text))
+            {
+                _textFilteredProducts = _products.Where(x =>
+                {
+                    Regex regex = new Regex(@"(\w)*" + Owner.textFilterBox.Text + @"(\w)*");
+
+                    return regex.IsMatch(x.Name);
+                }).ToList();
+            }
+            else
+                _textFilteredProducts = _products;
+
+
+            ApplyFilers();
+        }
+
+        public void ApplyFilers()
+        {
+            List<ProductVM> products = _textFilteredProducts;
+
+            foreach (var item in _filters)
+            {
+                products = item.DoFilter(products);
+            }
+
+            Products = products;
         }
 
         #region Commands
 
+        #region SetFilters
 
+        private BaseCommand SetFiltersCommand;
+        public ICommand SetFilters
+        {
+            get
+            {
+                if (SetFiltersCommand == null)
+                    SetFiltersCommand = new BaseCommand(SetFiltersExecuted);
+
+                return SetFiltersCommand;
+            }
+        }
+        private void SetFiltersExecuted(object obj)
+        {
+            FilterPopup popup = new FilterPopup(_filters);
+
+            popup.ShowDialog();
+
+            _filters = popup.GetResult();
+
+            ApplyFilers();
+        }
+
+        #endregion
+
+        #region DropFilters
+
+        private BaseCommand DropFiltersCommand;
+        public ICommand DropFilters
+        {
+            get
+            {
+                if (DropFiltersCommand == null)
+                    DropFiltersCommand = new BaseCommand(DropFiltersExecuted);
+
+                return DropFiltersCommand;
+            }
+        }
+        private void DropFiltersExecuted(object obj)
+        {
+            _filters.Clear();
+
+            ApplyFilers();
+        }
+
+        #endregion
 
         #endregion
     }

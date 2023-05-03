@@ -1,6 +1,7 @@
 ﻿using PCBuilder.Commands;
 using PCBuilder.CustomUI;
 using PCBuilder.Model;
+using PCBuilder.Utilities;
 using PCBuilder.View;
 using PCBuilder.View.Frames;
 using System;
@@ -40,6 +41,10 @@ namespace PCBuilder.ViewModel
         public MainWindowVM(MainWindow owner) : base(owner)
         {
             owner.adminBut.Visibility = User.Current.Rights == "ADMIN" ? Visibility.Visible : Visibility.Collapsed;
+
+            BasketManager.CreateInstance(User.Current.Email);
+
+            Application.Current.Exit += (object sender, ExitEventArgs e) => { BasketManager.Instance.Dispose(); };
 
             ChangeSection(2);
         }

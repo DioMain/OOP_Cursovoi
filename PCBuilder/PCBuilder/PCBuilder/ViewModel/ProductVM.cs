@@ -36,7 +36,7 @@ namespace PCBuilder.ViewModel
 
         public string Name { get => _product.Name; }
         public string FullDescription { get => _product.FullDescription; }
-        public string ShortDescription { get => _product.FullDescription; }
+        public string ShortDescription { get => _product.ShortDescription; }
         public string Manufacturer { get => _product.Manufacturer; }
         public string Type { get => _product.Type; }
         public string Price { get => $"{_product.Price}$"; }
@@ -105,6 +105,39 @@ namespace PCBuilder.ViewModel
 
         #endregion
 
+        #region OpenCart
+
+        private BaseCommand OpenCartCommand;
+        public ICommand OpenCart
+        {
+            get
+            {
+                if (OpenCartCommand == null)
+                    OpenCartCommand = new BaseCommand(OpenCartExecuted);
+
+                return OpenCartCommand;
+            }
+        }
+        private void OpenCartExecuted(object obj)
+        {
+            if (_owner is CatalogFrameVM)
+            {
+                CatalogFrameVM frame = (CatalogFrameVM)_owner;
+
+                if (!frame.Mode)
+                {
+                    MainWindowVM windowVM = frame.OwnerWindow.DataContext as MainWindowVM;
+
+                    windowVM.SetFrame(new ProductCartFrame(frame.OwnerWindow, Product));
+                }
+                else
+                {
+                    // Для Template editor
+                }             
+            }
+        }
+        #endregion
+
         #region BasketClick
 
         private BaseCommand BasketClickCommand;
@@ -119,6 +152,26 @@ namespace PCBuilder.ViewModel
             }
         }
         private void BasketClickExecuted(object obj)
+        {
+            MessageBox.Show("a");
+        }
+
+        #endregion
+
+        #region TemplateClick
+
+        private BaseCommand TemplateClickCommand;
+        public ICommand TemplateClick
+        {
+            get
+            {
+                if (TemplateClickCommand == null)
+                    TemplateClickCommand = new BaseCommand(TemplateClickExecuted);
+
+                return TemplateClickCommand;
+            }
+        }
+        private void TemplateClickExecuted(object obj)
         {
             MessageBox.Show("It works!");
         }

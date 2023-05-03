@@ -150,6 +150,18 @@
   <data name="Loc_MP_Submit" xml:space="preserve">
     <value>Ok</value>
   </data>
+  <data name="Loc_Popup_Global_Failure" xml:space="preserve">
+    <value>Failure</value>
+  </data>
+  <data name="Loc_Popup_Global_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="Loc_Popup_ProdCart_Added" xml:space="preserve">
+    <value>This product added to basket!</value>
+  </data>
+  <data name="Loc_ProdCart_ToBasket" xml:space="preserve">
+    <value>To basket</value>
+  </data>
   <data name="Loc_Reg_Address" xml:space="preserve">
     <value>Address</value>
   </data>

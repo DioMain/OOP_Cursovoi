@@ -160,6 +160,42 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Failure.
+        /// </summary>
+        public static string Loc_Popup_Global_Failure {
+            get {
+                return ResourceManager.GetString("Loc_Popup_Global_Failure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Success.
+        /// </summary>
+        public static string Loc_Popup_Global_Success {
+            get {
+                return ResourceManager.GetString("Loc_Popup_Global_Success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на This product added to basket!.
+        /// </summary>
+        public static string Loc_Popup_ProdCart_Added {
+            get {
+                return ResourceManager.GetString("Loc_Popup_ProdCart_Added", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на To basket.
+        /// </summary>
+        public static string Loc_ProdCart_ToBasket {
+            get {
+                return ResourceManager.GetString("Loc_ProdCart_ToBasket", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Address.
         /// </summary>
         public static string Loc_Reg_Address {
