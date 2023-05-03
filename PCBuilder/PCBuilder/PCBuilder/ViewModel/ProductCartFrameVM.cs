@@ -115,7 +115,7 @@ namespace PCBuilder.ViewModel
         }
         private void ToBasketExecuted(object obj)
         {
-            BasketManager.Instance.AddProduct(Product);
+            BasketManager.Instance.Add(Product);
 
             new MessagePopup((string)Application.Current.Resources["Loc_Popup_Global_Success"],
                             (string)Application.Current.Resources["Loc_Popup_ProdCart_Added"], true).ShowDialog();

@@ -102,6 +102,7 @@ namespace PCBuilder.ViewModel
                     _sectionPage = new UserFrame(Owner);
                     break;
                 case 1:
+                    _sectionPage = new BasketFrame(Owner);
                     break;
                 case 2:
                     _sectionPage = new CatalogFrame(Owner);

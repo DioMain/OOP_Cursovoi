@@ -124,6 +124,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Commands\BaseCommand.cs" />
+    <Compile Include="Commands\GetProductCommand.cs" />
     <Compile Include="CustomUI\CircleButton.xaml.cs">
       <DependentUpon>CircleButton.xaml</DependentUpon>
     </Compile>
@@ -175,6 +176,8 @@
     <Compile Include="Repositories\TemplateRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BasketFrameVM.cs" />
+    <Compile Include="ViewModel\BasketItemVM.cs" />
     <Compile Include="ViewModel\CatalogFrameVM.cs" />
     <Compile Include="ViewModel\FilterPopupVM.cs" />
     <Compile Include="ViewModel\FrameViewModel.cs" />
@@ -186,11 +189,29 @@
     <Compile Include="ViewModel\RegistrationWindowVM.cs" />
     <Compile Include="ViewModel\UserFrameVM.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
+    <Compile Include="View\Frames\BasketFrame.xaml.cs">
+      <DependentUpon>BasketFrame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Frames\CatalogFrame.xaml.cs">
       <DependentUpon>CatalogFrame.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Frames\OptionFrame.xaml.cs">
+      <DependentUpon>OptionFrame.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Frames\ProductCartFrame.xaml.cs">
       <DependentUpon>ProductCartFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frames\ProductEditorFrame.xaml.cs">
+      <DependentUpon>ProductEditorFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frames\ProductViewerFrame.xaml.cs">
+      <DependentUpon>ProductViewerFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frames\TemplateEditorFrame.xaml.cs">
+      <DependentUpon>TemplateEditorFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Frames\TemplateViewerFrame.xaml.cs">
+      <DependentUpon>TemplateViewerFrame.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Frames\UserFrame.xaml.cs">
       <DependentUpon>UserFrame.xaml</DependentUpon>
@@ -327,11 +348,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Frames\BasketFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Frames\CatalogFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\Frames\OptionFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Frames\ProductCartFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Frames\ProductEditorFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Frames\ProductViewerFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Frames\TemplateEditorFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Frames\TemplateViewerFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

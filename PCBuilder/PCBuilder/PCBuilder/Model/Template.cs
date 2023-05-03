@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace PCBuilder.Model
 {
+    [Serializable]
     public class Template
     {
         [Key]

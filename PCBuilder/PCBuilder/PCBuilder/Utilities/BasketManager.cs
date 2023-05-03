@@ -21,8 +21,8 @@ namespace PCBuilder.Utilities
 
         private JsonSerializerOptions _serializer;
 
-        private List<Product> products;
-        public List<Product> Products { get { return products; } }
+        private List<BasketItem> items;
+        public List<BasketItem> Items { get { return items; } }
 
         public string BasketPath { get => Path.Combine(BasketsFolder, $"{OwnerName}.json"); }
 
@@ -50,12 +50,12 @@ namespace PCBuilder.Utilities
             if (!Directory.Exists(BasketsFolder))
                 Directory.CreateDirectory(BasketsFolder);
 
-            products = new List<Product>();
+            items = new List<BasketItem>();
 
             _serializer = new JsonSerializerOptions()
             {
                 IncludeFields = true,
-                WriteIndented = true
+                WriteIndented = true,
             };
 
             OwnerName = userName.Replace('.', 'D');
@@ -70,24 +70,52 @@ namespace PCBuilder.Utilities
 
             string json = File.ReadAllText(BasketPath);
 
-            products = JsonSerializer.Deserialize<List<Product>>(json, _serializer);
+            items = JsonSerializer.Deserialize<List<BasketItem>>(json, _serializer);
         }
         private void SaveBasket()
         {
             if (File.Exists(BasketPath))
                 File.Delete(BasketPath);
 
-            string json = JsonSerializer.Serialize(products, typeof(List<Product>), _serializer);
+            string json = JsonSerializer.Serialize(items, typeof(List<BasketItem>), _serializer);
 
             File.WriteAllText(BasketPath, json);
         }
 
-        public void AddProduct(Product product) => products.Add(product);
-        public void RemoveProduct(Product product) => products.Remove(product);
+        public void Add(Product product) => items.Add(new BasketItem(product));
+        public void Remove(Product product) => items.Remove(items.First(i => i.Product == product));
+        public void Add(Template template) => items.Add(new BasketItem(template));
+        public void Remove(Template template) => items.Remove(items.First(i => i.Template == template));
+        public void Add(BasketItem item) => items.Add(item);
+        public void Remove(BasketItem item) => items.Remove(item);
 
         public void Dispose()
         {
             SaveBasket();
+        }
+    }
+
+    [Serializable]
+    public struct BasketItem
+    {
+        public bool IsTemplate { get; set; }
+
+        public Product Product { get; set; }
+        public Template Template { get; set; }
+
+        public BasketItem(Product product)
+        {
+            Product = product;
+            Template = null;
+
+            IsTemplate = false;
+        }
+        public BasketItem(Template template)
+        {
+            Product = null;
+            Template = template;
+
+            IsTemplate = true;
         }
     }
 }

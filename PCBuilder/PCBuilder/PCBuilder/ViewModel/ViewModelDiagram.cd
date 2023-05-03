@@ -18,7 +18,7 @@
   <Class Name="PCBuilder.ViewModel.FrameViewModel&lt;F, W&gt;" Collapsed="true">
     <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\FrameViewModel.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -32,15 +32,71 @@
   <Class Name="PCBuilder.ViewModel.MainWindowVM" Collapsed="true">
     <Position X="4" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAABAAYAAAAAAAAAAkAAAAAAAAAACABAACAAQAAA=</HashCode>
       <FileName>ViewModel\MainWindowVM.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PCBuilder.ViewModel.RegistrationWindowVM">
     <Position X="7.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAkAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <HashCode>AQAAkAAAAAAACAAAAAABAAAAAAAAAAAAAQAAAQAAAAA=</HashCode>
       <FileName>ViewModel\RegistrationWindowVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.BasketFrameVM" Collapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\BasketFrameVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.BasketItemVM" Collapsed="true">
+    <Position X="5.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAgAAAAAAAAAAQAAAAAABAAAQAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\BasketItemVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.CatalogFrameVM" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEIAAAAwoEAAAAAAAAEIAAAAIAAIAAAAIAAAAAAAAw=</HashCode>
+      <FileName>ViewModel\CatalogFrameVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.FilterPopupVM" Collapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAACAAAAAAAAABAAAAQAAAAA=</HashCode>
+      <FileName>ViewModel\FilterPopupVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.PerformanceVM" Collapsed="true">
+    <Position X="8.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABIAAAAAAQAAAAAAAAAAAAgAAEAAAA=</HashCode>
+      <FileName>ViewModel\PerformanceVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.ProductCartFrameVM" Collapsed="true">
+    <Position X="20.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQkCAAAAAQgACAAAAAQAAQYAABAAABAAAYAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ProductCartFrameVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.ProductVM">
+    <Position X="18.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQgCoAAAAQkAAABAAUAAAARAABAABBAAIYACIACAAAA=</HashCode>
+      <FileName>ViewModel\ProductVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.UserFrameVM" Collapsed="true">
+    <Position X="25.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\UserFrameVM.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

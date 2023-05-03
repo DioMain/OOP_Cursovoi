@@ -3,7 +3,9 @@ using PCBuilder.CustomUI;
 using PCBuilder.Model;
 using PCBuilder.Repositories;
 using PCBuilder.Utilites;
+using PCBuilder.Utilities;
 using PCBuilder.View.Frames;
+using PCBuilder.View.Popups;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -153,7 +155,10 @@ namespace PCBuilder.ViewModel
         }
         private void BasketClickExecuted(object obj)
         {
-            MessageBox.Show("a");
+            BasketManager.Instance.Add(Product);
+
+            new MessagePopup((string)Application.Current.Resources["Loc_Popup_Global_Success"],
+                            (string)Application.Current.Resources["Loc_Popup_ProdCart_Added"], true).ShowDialog();
         }
 
         #endregion
