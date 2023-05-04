@@ -144,5 +144,22 @@ namespace PCBuilder.ViewModel
         #endregion
 
         #endregion
+
+        public override void Dispose()
+        {
+            base.Dispose();
+
+            if (_filters != null)
+                _filters.Clear();
+
+            if (_products != null)
+                _products.Clear();
+
+            if (_textFilteredProducts != null)
+                _textFilteredProducts.Clear();
+
+            if (_resultProducts != null)
+                _resultProducts.Clear();
+        }
     }
 }

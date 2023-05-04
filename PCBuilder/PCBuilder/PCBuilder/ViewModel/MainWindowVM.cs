@@ -92,6 +92,12 @@ namespace PCBuilder.ViewModel
         /// <param name="sectionId">0 - user; 1 - basket; 2 - catalog; 3 - editor; 4 - options; 5 - admin</param>
         public void ChangeSection(int sectionId)
         {
+            if (_sectionPage != null)
+            {
+                ((BaseViewModel)_sectionPage.DataContext).Dispose();
+            }
+                
+
             SectionId = sectionId;
 
             ChangeSeletedButton(sectionId);
@@ -110,6 +116,7 @@ namespace PCBuilder.ViewModel
                 case 3:
                     break;
                 case 4:
+                    _sectionPage = new OptionFrame(Owner);
                     break;
                 case 5:
                     break;

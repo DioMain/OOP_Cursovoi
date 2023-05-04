@@ -46,21 +46,21 @@
   <Class Name="PCBuilder.ViewModel.BasketFrameVM" Collapsed="true">
     <Position X="18.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAQCAAAAAgAAAAAAAAAQABEAAAAAAAAACA=</HashCode>
       <FileName>ViewModel\BasketFrameVM.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PCBuilder.ViewModel.BasketItemVM" Collapsed="true">
     <Position X="5.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAgAAAAAAAAAAQAAAAAABAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AABAgAAAAYAgAAEAAQAEACQAAAEAgBAAAQACAACDAAA=</HashCode>
       <FileName>ViewModel\BasketItemVM.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PCBuilder.ViewModel.CatalogFrameVM" Collapsed="true">
     <Position X="23" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEEIAAAAwoEAAAAAAAAEIAAAAIAAIAAAAIAAAAAAAAw=</HashCode>
+      <HashCode>AEEIAAAAwqEAAAAAAAAEIAAAAIAAIAAAAIAAAAAAAAw=</HashCode>
       <FileName>ViewModel\CatalogFrameVM.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -95,8 +95,15 @@
   <Class Name="PCBuilder.ViewModel.UserFrameVM" Collapsed="true">
     <Position X="25.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAACEAABAAAEAAAAAEAAAAAAACAAAAAAAAAAA=</HashCode>
       <FileName>ViewModel\UserFrameVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PCBuilder.ViewModel.OrderVM" Collapsed="true">
+    <Position X="6" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAgAAGAQAAAAgAAAAAAAAAEAAAAAAAABAAAAEAAAA=</HashCode>
+      <FileName>ViewModel\OrderVM.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

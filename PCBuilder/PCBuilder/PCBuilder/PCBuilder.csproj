@@ -183,6 +183,8 @@
     <Compile Include="ViewModel\FrameViewModel.cs" />
     <Compile Include="ViewModel\LoginWindowVM.cs" />
     <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="ViewModel\OptionFrameVM.cs" />
+    <Compile Include="ViewModel\OrderVM.cs" />
     <Compile Include="ViewModel\PerformanceVM.cs" />
     <Compile Include="ViewModel\ProductCartFrameVM.cs" />
     <Compile Include="ViewModel\ProductVM.cs" />

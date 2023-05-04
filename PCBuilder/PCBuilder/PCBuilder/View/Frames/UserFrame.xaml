@@ -20,20 +20,83 @@
             </Grid>
         </Border>
         <ScrollViewer Grid.Row="1" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
-            <StackPanel Margin="35,20,25,0" Orientation="Vertical">
-                <TextBlock x:Name="nameBox" Text="Name" Style="{StaticResource H1TextB}"/>
+            <StackPanel Margin="48,20,25,0" Orientation="Vertical">
+                <TextBlock Text="Name" Style="{StaticResource H1TextB}"/>
                 <StackPanel Orientation="Horizontal" Margin="0,7,0,0">
-                    <TextBlock x:Name="fnameBox" DockPanel.Dock="Left" Text="FName" Style="{StaticResource SimpleTextB}" Width="425"/>
-                    <TextBlock x:Name="lnameBox" DockPanel.Dock="Right" Text="SName" Style="{StaticResource SimpleTextB}"/>
+                    <TextBlock DockPanel.Dock="Left" Text="{Binding FName}" Style="{StaticResource SimpleTextB}" Width="425"/>
+                    <TextBlock DockPanel.Dock="Right" Text="{Binding LName}" Style="{StaticResource SimpleTextB}"/>
                 </StackPanel>
                 <TextBlock Text="Email" Style="{StaticResource H1TextB}" Margin="0,14,0,0"/>
-                <TextBlock x:Name="emailBox" Text="Some email" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
+                <TextBlock Text="{Binding Email}" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
                 <TextBlock Text="Address" Style="{StaticResource H1TextB}" Margin="0,14,0,0"/>
-                <TextBlock x:Name="addressBox" Text="Some address" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
+                <TextBlock Text="{Binding Address}" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
                 <TextBlock Text="Contact number" Style="{StaticResource H1TextB}" Margin="0,14,0,0"/>
-                <TextBlock x:Name="contNumBox" Text="Some number" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
+                <TextBlock Text="{Binding Number}" Style="{StaticResource SimpleTextB}" Margin="0,8,0,0"/>
 
-                <TextBlock Text="Тут ещё должена быть история заказов" Style="{StaticResource SimpleTextB}" Margin="0,131,0,0"/>
+                <Border CornerRadius="8" BorderBrush="Black" Background="#F3F3F3" BorderThickness="1" Margin="0,0,0,25">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Style="{StaticResource H1Text}" Foreground="Black" FontSize="36"
+                                   Text="Order history"/>
+
+                        <ListView x:Name="list" ItemsSource="{Binding Orders}" Margin="0,15,0,5" IsHitTestVisible="False">
+                            <ListView.Style>
+                                <Style TargetType="{x:Type ListView}">
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Style>
+                            </ListView.Style>
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="Margin" Value="5" />
+                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListViewItem">
+                                                <Border Background="#E4E4E4" BorderBrush="Transparent" Height="100"
+                                                        BorderThickness="4" CornerRadius="12" Padding="10">
+                                                    <ContentPresenter/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid x:Name="container">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="50"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Grid Grid.Column="0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <TextBlock Grid.Column="0" Style="{StaticResource SimpleTextB}" Text="{Binding Price}"/>
+                                                <TextBlock Grid.Column="1" Style="{StaticResource SimpleTextB}" Text="{Binding Status}"/>
+                                                <TextBlock Grid.Column="2" Style="{StaticResource SimpleTextB}" Text="{Binding ItemsCount}"/>
+                                            </Grid>
+                                            
+                                            <TextBlock Grid.Row="1" Style="{StaticResource SimpleTextB}" TextWrapping="Wrap"
+                                                       Text="{Binding Note}" FontSize="14"/>
+                                        </Grid>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </Border>
             </StackPanel>
         </ScrollViewer>
     </Grid>

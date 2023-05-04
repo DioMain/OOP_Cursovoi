@@ -82,6 +82,8 @@ namespace PCBuilder.Utilities
             File.WriteAllText(BasketPath, json);
         }
 
+        public void Clear() => items.Clear();
+
         public void Add(Product product) => items.Add(new BasketItem(product));
         public void Remove(Product product) => items.Remove(items.First(i => i.Product == product));
         public void Add(Template template) => items.Add(new BasketItem(template));

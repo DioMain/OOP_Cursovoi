@@ -17,6 +17,8 @@ namespace PCBuilder.Model
         public int UserId { get; set; }
         public User User { get; set; }
 
+        public string Note { get; set; }
+
         public string Status { get; set; }
         [NotMapped]
         public OrderStatus StatusType

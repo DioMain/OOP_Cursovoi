@@ -105,7 +105,7 @@
                 <TextBlock DockPanel.Dock="Left" Style="{StaticResource H2Text}" Foreground="Black"
                                TextAlignment="Left" Text="{Binding TotalPrice}"/>
                 <Button DockPanel.Dock="Right" Style="{StaticResource CustomButton}" Content="Confirm" HorizontalAlignment="Right"
-                            Width="150"/>
+                            Width="150" Command="{Binding CreateOrder}"/>
             </DockPanel>
         </StackPanel>
     </Grid>
