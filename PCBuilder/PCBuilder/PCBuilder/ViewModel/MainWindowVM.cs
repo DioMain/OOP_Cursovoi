@@ -19,7 +19,11 @@ namespace PCBuilder.ViewModel
     {
         private Page _sectionPage;
 
+        private Stack<Page> _subPages;
+
         #region Properties
+
+        public Page CurrentSubPage { get => _subPages.Count > 0 ? _subPages.Peek() : null; }
 
         private int sectionId;
         /// <summary>
@@ -45,6 +49,8 @@ namespace PCBuilder.ViewModel
             BasketManager.CreateInstance(User.Current.Email);
 
             Application.Current.Exit += (object sender, ExitEventArgs e) => { BasketManager.Instance.Dispose(); };
+
+            _subPages = new Stack<Page>();
 
             ChangeSection(2);
         }
@@ -97,7 +103,6 @@ namespace PCBuilder.ViewModel
                 ((BaseViewModel)_sectionPage.DataContext).Dispose();
             }
                 
-
             SectionId = sectionId;
 
             ChangeSeletedButton(sectionId);
@@ -114,11 +119,13 @@ namespace PCBuilder.ViewModel
                     _sectionPage = new CatalogFrame(Owner);
                     break;
                 case 3:
+                    
                     break;
                 case 4:
                     _sectionPage = new OptionFrame(Owner);
                     break;
                 case 5:
+                    _sectionPage = new ProductViewerFrame(Owner);
                     break;
             }
 
@@ -128,13 +135,33 @@ namespace PCBuilder.ViewModel
         /// <summary>
         /// Применяет страницу секции
         /// </summary>
-        public void ApplySection() => Owner.frameSection.Content = _sectionPage;
+        public void ApplySection()
+        {
+            _subPages.Clear();
+
+            Owner.frameSection.Content = _sectionPage;
+        }
 
         /// <summary>
         /// Сменяет сраницу не меняя секции
         /// </summary>
         /// <param name="page"></param>
-        public void SetFrame(Page page) => Owner.frameSection.Content = page;
+        public void PushSubPage(Page page)
+        {
+            Owner.frameSection.Content = page;
+
+            _subPages.Push(page);
+        }
+
+        public void PopSubPage()
+        {
+            _subPages.Pop();
+
+            if (CurrentSubPage != null)
+                Owner.frameSection.Content = CurrentSubPage;
+            else
+                ApplySection();
+        }
 
         #region Commands
 

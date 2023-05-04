@@ -3,12 +3,38 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:local="clr-namespace:PCBuilder.View.Frames"
       mc:Ignorable="d" 
       d:DesignHeight="645" d:DesignWidth="976"
       Title="OptionFrame">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         
+        <Border Grid.Row="0" Background="#5F7FF0" CornerRadius="0,9,0,0">
+            <Grid>
+                <TextBlock Text="{DynamicResource Loc_Options_Title}" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
+            </Grid>
+        </Border>
+
+        <StackPanel Orientation="Vertical" Grid.Row="1" Margin="48,12,48,0">
+            <DockPanel Height="60">
+                <TextBlock Style="{StaticResource H1TextB}" Text="{DynamicResource Loc_Options_Lang}" DockPanel.Dock="Left"
+                           VerticalAlignment="Center"/>
+                <ComboBox x:Name="combo" Style="{StaticResource CustomComboBox}" Width="120" 
+                          DockPanel.Dock="Right" ItemsSource="{Binding Items}" VerticalAlignment="Center"
+                          Height="45" HorizontalAlignment="Right">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding LangSellect}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </DockPanel>
+        </StackPanel>
     </Grid>
 </Page>

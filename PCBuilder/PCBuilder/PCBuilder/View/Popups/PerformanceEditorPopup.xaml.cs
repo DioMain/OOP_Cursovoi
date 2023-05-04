@@ -12,21 +12,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PCBuilder.View.Frames
+namespace PCBuilder.View.Popups
 {
     /// <summary>
-    /// Логика взаимодействия для ProductEditorFrame.xaml
+    /// Логика взаимодействия для PerformanceEditorPopup.xaml
     /// </summary>
-    public partial class ProductEditorFrame : Page
+    public partial class PerformanceEditorPopup : Window
     {
-        public ProductEditorFrame(MainWindow mainWindow, Product product = null)
+        private PerformanceEditorPupupVM dataContext;
+
+        public PerformanceEditorPopup(Performance performance = null)
         {
             InitializeComponent();
 
-            DataContext = new ProductEditorFrameVM(this, mainWindow, product);
+            dataContext = new PerformanceEditorPupupVM(this, performance);
+
+            DataContext = dataContext;
         }
+
+        public Performance GetResult() => dataContext.Result;
     }
 }

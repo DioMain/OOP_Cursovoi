@@ -77,7 +77,6 @@
                                 <Grid x:Name="grid">
                                     <DockPanel VerticalAlignment="Center">
                                         <TextBlock DockPanel.Dock="Left" Style="{StaticResource SimpleTextB}" Text="{Binding Name}"/>
-                                        <TextBlock DockPanel.Dock="Left" Style="{StaticResource SimpleTextB}" Text="{Binding Note}" Margin="10,0,0,0"/>
                                         <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" Style="{StaticResource SimpleTextB}" Text="{Binding Value}"/>
                                     </DockPanel>
                                     <Rectangle HorizontalAlignment="Center" Height="{Binding ElementName=grid, Path=ActualHeight}"

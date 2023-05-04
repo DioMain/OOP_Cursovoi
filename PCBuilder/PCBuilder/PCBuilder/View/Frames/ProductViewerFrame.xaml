@@ -4,11 +4,131 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PCBuilder.View.Frames"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:cui="clr-namespace:PCBuilder.CustomUI"
       mc:Ignorable="d" 
       d:DesignHeight="645" d:DesignWidth="976"
       Title="ProductViewerFrame">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#5F7FF0" Grid.Row="0" CornerRadius="0,9,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Product viewer" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
+
+                <DockPanel Grid.Row="1" Margin="48,0,48,15">
+                    <Border DockPanel.Dock="Left" Background="#5471DA" CornerRadius="20" Padding="15,10,15,10">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource CustomButton}" Content="Create" FontSize="14" Width="125"
+                                    Command="{Binding Create}"/>
+                        </StackPanel>
+                    </Border>
+
+                    <cui:TextBoxEx x:Name="textFilterBox" DockPanel.Dock="Right" Width="250"
+                                   HorizontalAlignment="Right" Placeholder="Product name" Height="40"/>
+                </DockPanel>
+            </Grid>
+        </Border>
+        <ListView Grid.Row="1" x:Name="list" ItemsSource="{Binding Products}" Padding="48, 0, 48, 0" ScrollViewer.CanContentScroll="False"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.Style>
+                <Style TargetType="{x:Type ListView}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </ListView.Style>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Margin" Value="0,5,0,0" />
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Margin="0, 16, 0, 0"
+                                            BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border x:Name="cont">
+                        <Border.Style>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="Background" Value="#F2F0F0"/>
+                                <Setter Property="Height" Value="200"/>
+                                <Setter Property="CornerRadius" Value="16"/>
+                                <Setter Property="BorderBrush" Value="#F2F0F0"/>
+                                <Setter Property="BorderThickness" Value="4"/>
+                                <Style.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color"
+                                                        From="#dbd6d6" To="#F2F0F0" Duration="0:0:0.4"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+
+                        <Grid>
+                            <Grid Background="Transparent">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Loaded">
+                                        <i:InvokeCommandAction Command="{Binding Init}" CommandParameter="{Binding ElementName=cont}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border x:Name="border" Grid.Column="0" Width="175" Height="175" CornerRadius="16" BorderBrush="#B0B0B0">
+                                    <Border.Clip>
+                                        <RectangleGeometry Rect="0, 0, 175, 175" RadiusX="16" RadiusY="16"/>
+                                    </Border.Clip>
+                                    <Grid Background="#B0B0B0">
+                                        <Image Source="{Binding Image}" RenderOptions.BitmapScalingMode="Fant"/>
+                                    </Grid>
+                                </Border>
+
+                                <DockPanel Grid.Column="1">
+                                    <TextBlock DockPanel.Dock="Top" Foreground="Black" Style="{StaticResource H2Text}" TextAlignment="Left" Text="{Binding Name}" Margin="0,15,0,0"/>
+                                    <TextBlock DockPanel.Dock="Top" Foreground="Black" Style="{StaticResource H2Text}" TextAlignment="Left" Text="{Binding ShortDescription}" FontSize="18" Margin="0,5,0,0" TextWrapping="Wrap"/>
+                                    <TextBlock DockPanel.Dock="Bottom" Foreground="Black" Style="{StaticResource H2Text}" TextAlignment="Left" VerticalAlignment="Bottom" Text="{Binding Manufacturer}" FontSize="18" Margin="0,0,0,15"/>
+                                </DockPanel>
+                                <Grid Grid.Column="2">
+                                    <TextBlock Foreground="Black" Style="{StaticResource H2Text}" Text="{Binding Price}"
+                                               VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,15,0"/>
+                                </Grid>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,15,15">
+                                <cui:CircleButton x:Name="deleteButton" Radius="35" ClickCommand="{Binding Delete}"
+                                                          ImageSource="/Resources/delete.png"/>
+                                <cui:CircleButton x:Name="editButton" Radius="35" Margin="7,0,0,0" ClickCommand="{Binding Edit}"
+                                                          ImageSource="/Resources/options.png"/>
+                                <cui:CircleButton x:Name="moreButton" Radius="35" Margin="7,0,0,0"
+                                                          ClickCommand="{Binding OpenCart}" ImageSource="/Resources/more.png"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

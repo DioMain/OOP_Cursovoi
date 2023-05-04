@@ -34,6 +34,32 @@ namespace PCBuilder.Repositories
         {
             try
             {
+                foreach (var item in DataBaseManager.Instance.Performances.GetAll().Where(i => i.ProductId == id))
+                {
+                    DataBaseManager.Instance.Performances.Delete(item.Id);
+                }
+
+                foreach (var item in DataBaseManager.Instance.OrderItems.GetAll().Where(i => i.ProductId == id))
+                {
+                    DataBaseManager.Instance.OrderItems.Delete(item.Id);
+                }
+
+                Template[] templates = DataBaseManager.Instance.Templates.GetAll().Where(i =>
+                {
+                    foreach (var item in DataBaseManager.Instance.Templates.GetItems(i))
+                    {
+                        if (item.ProductId == id)
+                            return true;
+                    }
+
+                    return false;
+                }).ToArray();
+
+                foreach (var template in templates)
+                {
+                    DataBaseManager.Instance.Templates.Delete(template.Id);
+                }
+
                 _dataBase.Products.Remove(_dataBase.Products.First(i => i.Id == id));
 
                 _dataBase.SaveChanges();

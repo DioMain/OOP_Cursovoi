@@ -19,7 +19,9 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid>
-        <TextBox x:Name="box" Style="{DynamicResource CustomTextBox}" FontSize="{Binding ElementName=control, Path=FontSize}"/>
+        <TextBox
+                 x:Name="box" Style="{DynamicResource CustomTextBox}" FontSize="{Binding ElementName=control, Path=FontSize}"
+                 />
         <TextBlock x:Name="placeholder" Style="{StaticResource phs}" FontSize="{Binding ElementName=control, Path=FontSize}"
                    HorizontalAlignment="Right" Margin="0,0,12,0" VerticalAlignment="Top" IsHitTestVisible="False"/>
     </Grid>

@@ -95,7 +95,7 @@ namespace PCBuilder.ViewModel
         {
             MainWindowVM windowVM = OwnerWindow.DataContext as MainWindowVM;
 
-            windowVM.ApplySection();
+            windowVM.PopSubPage();
         }
 
         #endregion

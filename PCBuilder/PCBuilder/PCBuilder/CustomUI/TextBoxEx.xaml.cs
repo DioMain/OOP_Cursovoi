@@ -53,9 +53,10 @@ namespace PCBuilder.CustomUI
             remove => RemoveHandler(ChangedEvent, value);
         }
 
+        private string _text;
         public string Text
         {
-            get => box.Text;
+            get => _text;
             set => box.Text = value;
         }
 
@@ -159,9 +160,11 @@ namespace PCBuilder.CustomUI
         {
             if (OnlyNumbers && !int.TryParse(box.Text, out _) && !string.IsNullOrEmpty(box.Text))
             {
-                box.Text = Text;
+                box.Text = _text;
                 return;
             }
+
+            _text = box.Text;
                 
             bool isEmpty = box.Text == string.Empty;
 

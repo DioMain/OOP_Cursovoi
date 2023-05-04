@@ -86,22 +86,34 @@ namespace PCBuilder.ViewModel
             {
                 CatalogFrameVM frame = (CatalogFrameVM)_owner;
 
-                Border border = obj as Border;
+                FrameworkElement container = obj as FrameworkElement;
 
                 CircleButton btn;
 
                 if (frame.Mode)
                 {
-                    btn = border.FindName("totemplate") as CircleButton;
+                    btn = container.FindName("totemplate") as CircleButton;
                     btn.Visibility = Visibility.Visible;
                     btn.Style = Application.Current.Resources["CB_DEF"] as Style;
                 }
                 else
                 {
-                    btn = border.FindName("tobasket") as CircleButton;
+                    btn = container.FindName("tobasket") as CircleButton;
                     btn.Visibility = Visibility.Visible;
                     btn.Style = Application.Current.Resources["CB_DEF"] as Style;
                 }
+            }
+            else if (_owner is ProductViewerFrameVM)
+            {
+                FrameworkElement container = obj as FrameworkElement;
+
+                FrameworkElement but0 = container.FindName("moreButton") as FrameworkElement;
+                FrameworkElement but1 = container.FindName("editButton") as FrameworkElement;
+                FrameworkElement but2 = container.FindName("deleteButton") as FrameworkElement;
+
+                but0.Style = Application.Current.Resources["CB_DEF"] as Style;
+                but1.Style = Application.Current.Resources["CB_DEF"] as Style;
+                but2.Style = Application.Current.Resources["CB_RED"] as Style;
             }
         }
 
@@ -130,12 +142,20 @@ namespace PCBuilder.ViewModel
                 {
                     MainWindowVM windowVM = frame.OwnerWindow.DataContext as MainWindowVM;
 
-                    windowVM.SetFrame(new ProductCartFrame(frame.OwnerWindow, Product));
+                    windowVM.PushSubPage(new ProductCartFrame(frame.OwnerWindow, Product));
                 }
                 else
                 {
                     // Для Template editor
                 }             
+            }
+            else if (_owner is ProductViewerFrameVM)
+            {
+                ProductViewerFrameVM frame = (ProductViewerFrameVM)_owner;
+
+                MainWindowVM windowVM = frame.OwnerWindow.DataContext as MainWindowVM;
+
+                windowVM.PushSubPage(new ProductCartFrame(frame.OwnerWindow, Product));
             }
         }
         #endregion
@@ -179,6 +199,52 @@ namespace PCBuilder.ViewModel
         private void TemplateClickExecuted(object obj)
         {
             MessageBox.Show("It works!");
+        }
+
+        #endregion
+
+        #region Edit
+
+        private BaseCommand EditCommand;
+        public ICommand Edit
+        {
+            get
+            {
+                if (EditCommand == null)
+                    EditCommand = new BaseCommand(EditExecuted);
+
+                return EditCommand;
+            }
+        }
+        private void EditExecuted(object obj)
+        {
+            if (_owner is ProductViewerFrameVM)
+            {
+                ((ProductViewerFrameVM)_owner).EditProduct(this);
+            }
+        }
+
+        #endregion
+
+        #region Delete
+
+        private BaseCommand DeleteCommand;
+        public ICommand Delete
+        {
+            get
+            {
+                if (DeleteCommand == null)
+                    DeleteCommand = new BaseCommand(DeleteExecuted);
+
+                return DeleteCommand;
+            }
+        }
+        private void DeleteExecuted(object obj)
+        {
+            if (_owner is ProductViewerFrameVM)
+            {
+                ((ProductViewerFrameVM)_owner).RemoveProduct(this);
+            }
         }
 
         #endregion

@@ -25,6 +25,8 @@ namespace PCBuilder.Utilites
 
         private Application _app;
 
+        public Language Current { get; private set; }
+
         static LocalizationManager()
         {
             _temp0 = new object();
@@ -47,11 +49,15 @@ namespace PCBuilder.Utilites
 
             Language cur = culture == "ru-RU" || culture == "ru-BY" ? Language.RUS : Language.ENG;
 
+            Current = cur;
+
             SetLang(cur);
         }
 
         public void SetLang(Language language)
         {
+            Current = language;
+
             PropertyInfo[] properties;
 
             switch (language)

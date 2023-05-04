@@ -11,8 +11,8 @@
         <TextBlock Style="{StaticResource H1Text}" Text="Filters" Margin="0,20,0,0"/>
         <TextBlock Style="{StaticResource H2Text}" Text="Cost" Margin="0,5,0,0"/>
         <DockPanel Height="40" Margin="0,5,0,0">
-            <cui:TextBoxEx DockPanel.Dock="Left" x:Name="contFrom"  Width="130" Placeholder="From"/>
-            <cui:TextBoxEx DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="contTo" Width="130" Placeholder="To"/>
+            <cui:TextBoxEx DockPanel.Dock="Left" x:Name="contFrom"  Width="130" Placeholder="From" OnlyNumbers="True"/>
+            <cui:TextBoxEx DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="contTo" Width="130" Placeholder="To" OnlyNumbers="True"/>
         </DockPanel>
         <TextBlock Style="{StaticResource H2Text}" Text="Type" Margin="0,5,0,0"/>
         <ComboBox x:Name="combo" Style="{StaticResource CustomComboBox}" Height="40" Margin="0,5,0,0" Width="200"/>

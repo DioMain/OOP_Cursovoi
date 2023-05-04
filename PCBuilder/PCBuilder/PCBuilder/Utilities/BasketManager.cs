@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using PCBuilder.ViewModel;
+using PCBuilder.Repositories;
 
 namespace PCBuilder.Utilities
 {
@@ -71,6 +72,8 @@ namespace PCBuilder.Utilities
             string json = File.ReadAllText(BasketPath);
 
             items = JsonSerializer.Deserialize<List<BasketItem>>(json, _serializer);
+
+            CheckItem();
         }
         private void SaveBasket()
         {
@@ -82,13 +85,37 @@ namespace PCBuilder.Utilities
             File.WriteAllText(BasketPath, json);
         }
 
+        public void CheckItem()
+        {
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (items[i].IsTemplate)
+                {
+                    if (DataBaseManager.Instance.Templates.Get(items[i].Template.Id) == null)
+                    {
+                        items.Remove(items[i]);
+                        i--;
+                    }             
+                }
+                else
+                {
+                    if (DataBaseManager.Instance.Products.Get(items[i].Product.Id) == null)
+                    {
+                        items.Remove(items[i]);
+                        i--;
+                    }
+                }
+            }
+        }
+
         public void Clear() => items.Clear();
 
         public void Add(Product product) => items.Add(new BasketItem(product));
-        public void Remove(Product product) => items.Remove(items.First(i => i.Product == product));
-        public void Add(Template template) => items.Add(new BasketItem(template));
-        public void Remove(Template template) => items.Remove(items.First(i => i.Template == template));
         public void Add(BasketItem item) => items.Add(item);
+        public void Add(Template template) => items.Add(new BasketItem(template));
+
+        public void Remove(Product product) => items.Remove(items.First(i => i.Product == product));
+        public void Remove(Template template) => items.Remove(items.First(i => i.Template == template));
         public void Remove(BasketItem item) => items.Remove(item);
 
         public void Dispose()

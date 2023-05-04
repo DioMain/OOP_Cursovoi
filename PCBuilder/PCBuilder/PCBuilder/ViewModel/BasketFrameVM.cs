@@ -35,6 +35,8 @@ namespace PCBuilder.ViewModel
 
         public BasketFrameVM(BasketFrame owner, MainWindow window) : base(owner, window)
         {
+            BasketManager.Instance.CheckItem();
+
             SyncData();
         }
 
@@ -93,8 +95,6 @@ namespace PCBuilder.ViewModel
             };
 
             DataBaseManager.Instance.Orders.Add(order);
-
-            order = DataBaseManager.Instance.Users.GetOrders(User.Current).OrderBy(x => x.Id).LastOrDefault();
 
             List<OrderItem> orderItems = new List<OrderItem>();
 

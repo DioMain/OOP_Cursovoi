@@ -173,7 +173,7 @@ namespace PCBuilder.ViewModel
             {
                 MainWindowVM windowVM = frame.OwnerWindow.DataContext as MainWindowVM;
 
-                windowVM.SetFrame(new ProductCartFrame(frame.OwnerWindow, _basketItem.Product));
+                windowVM.PushSubPage(new ProductCartFrame(frame.OwnerWindow, _basketItem.Product));
             }
         }
 

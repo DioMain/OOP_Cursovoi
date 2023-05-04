@@ -89,7 +89,6 @@ namespace PCBuilder.Repositories
                 Performance edit = _dataBase.Performances.Find(item.Id);
 
                 edit.Dependency = item.Dependency;
-                edit.Note = item.Note;
                 edit.Value = item.Value;
                 edit.Name = item.Name;
 

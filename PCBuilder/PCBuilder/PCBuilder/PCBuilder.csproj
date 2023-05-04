@@ -185,8 +185,11 @@
     <Compile Include="ViewModel\MainWindowVM.cs" />
     <Compile Include="ViewModel\OptionFrameVM.cs" />
     <Compile Include="ViewModel\OrderVM.cs" />
+    <Compile Include="ViewModel\PerformanceEditorPupupVM.cs" />
     <Compile Include="ViewModel\PerformanceVM.cs" />
     <Compile Include="ViewModel\ProductCartFrameVM.cs" />
+    <Compile Include="ViewModel\ProductEditorFrameVM.cs" />
+    <Compile Include="ViewModel\ProductViewerFrameVM.cs" />
     <Compile Include="ViewModel\ProductVM.cs" />
     <Compile Include="ViewModel\RegistrationWindowVM.cs" />
     <Compile Include="ViewModel\UserFrameVM.cs" />
@@ -229,6 +232,9 @@
     </Compile>
     <Compile Include="View\Popups\MessagePopup.xaml.cs">
       <DependentUpon>MessagePopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Popups\PerformanceEditorPopup.xaml.cs">
+      <DependentUpon>PerformanceEditorPopup.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
@@ -399,6 +405,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Popups\MessagePopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popups\PerformanceEditorPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

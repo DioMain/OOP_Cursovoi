@@ -160,6 +160,24 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Language.
+        /// </summary>
+        public static string Loc_Options_Lang {
+            get {
+                return ResourceManager.GetString("Loc_Options_Lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Options.
+        /// </summary>
+        public static string Loc_Options_Title {
+            get {
+                return ResourceManager.GetString("Loc_Options_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Failure.
         /// </summary>
         public static string Loc_Popup_Global_Failure {

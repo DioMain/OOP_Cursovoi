@@ -4,11 +4,135 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PCBuilder.View.Frames"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:cui="clr-namespace:PCBuilder.CustomUI"
       mc:Ignorable="d" 
-      d:DesignHeight="645" d:DesignWidth="976"
+      d:DesignHeight="1250" d:DesignWidth="976"
       Title="ProductEditorFrame">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#5F7FF0" Grid.Row="0" CornerRadius="0,9,0,0">
+            <Grid>
+                <TextBlock Grid.Row="0" Text="Product editor" Style="{StaticResource H0Text}" Margin="0,20,0,0"/>
+            </Grid>
+        </Border>
+
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible">
+            <StackPanel Orientation="Vertical" Margin="48,0,40,0">
+                <DockPanel Height="45" Margin="0,40,0,0">
+                    <cui:TextBoxEx x:Name="nameBox" DockPanel.Dock="Left" Width="250"/>
+                    <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" Text="Name" VerticalAlignment="Center"
+                           Style="{StaticResource SimpleTextB}" FontSize="26"/>
+                </DockPanel>
+                
+                <DockPanel Height="45" Margin="0,30,0,0">
+                    <cui:TextBoxEx x:Name="manufacturerBox" DockPanel.Dock="Left" Width="250"/>
+                    <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" Text="Manufacturer" VerticalAlignment="Center"
+                           Style="{StaticResource SimpleTextB}" FontSize="26"/>
+                </DockPanel>
+                
+                <TextBlock DockPanel.Dock="Right" Text="Short description" VerticalAlignment="Center"
+                           Style="{StaticResource H1TextB}" FontSize="34" Margin="0,30,0,0"/>
+                <TextBox Style="{StaticResource CustomTextBoxMultiLine}" FontSize="16" x:Name="shortBox" DockPanel.Dock="Left" Height="85" Margin="0,10,0,0"/>
+                
+                <TextBlock DockPanel.Dock="Right" Text="Fuul description" VerticalAlignment="Center"
+                           Style="{StaticResource H1TextB}" FontSize="34" Margin="0,30,0,0"/>
+                <TextBox Style="{StaticResource CustomTextBoxMultiLine}" FontSize="16" x:Name="fullBox" DockPanel.Dock="Left" Height="175" Margin="0,10,0,0"/>
+                
+                <DockPanel Height="45" Margin="0,30,0,0">
+                    <Button Style="{StaticResource CustomButton}" DockPanel.Dock="Left" Width="200" Command="{Binding SetImage}"
+                            Content="Set image" FontSize="20"/>
+                    <TextBlock x:Name="imgText" DockPanel.Dock="Right" HorizontalAlignment="Right" Text="{Binding ImageUrl}" VerticalAlignment="Center"
+                           Style="{StaticResource SimpleTextB}" FontSize="26"/>
+                </DockPanel>
+                
+                <DockPanel Height="45" Margin="0,30,0,0">
+                    <ComboBox x:Name="typeCombo" Style="{StaticResource CustomComboBox}" DockPanel.Dock="Left" Width="200"
+                            ItemsSource="{Binding Types}"/>
+                    <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" Text="Type" VerticalAlignment="Center"
+                           Style="{StaticResource SimpleTextB}" FontSize="26"/>
+                </DockPanel>
+                
+                <DockPanel Height="45" Margin="0,30,0,0">
+                    <cui:TextBoxEx x:Name="priceBox" DockPanel.Dock="Left" Width="200"
+                            OnlyNumbers="True"/>
+                    <TextBlock DockPanel.Dock="Right" HorizontalAlignment="Right" Text="Price" VerticalAlignment="Center"
+                           Style="{StaticResource SimpleTextB}" FontSize="26"/>
+                </DockPanel>
+                
+                <Border Margin="0,30,0,0" x:Name="border">
+                    <Border.Style>
+                        <Style TargetType="Border">
+                            <Setter Property="BorderThickness" Value="2"/>
+                            <Setter Property="BorderBrush" Value="Black"/>
+                            <Setter Property="Background" Value="#F9F9F9"/>
+                            <Setter Property="CornerRadius" Value="12"/>
+                        </Style>
+                    </Border.Style>
+                    <StackPanel>
+                        <Grid Height="50">
+                            <TextBlock Style="{StaticResource H1Text}" Foreground="Black" Text="Performances"
+                                       VerticalAlignment="Center"/>
+                            <cui:CircleButton Style="{StaticResource CB_DEF}" Radius="35" ImageSource="/Resources/add.png"
+                                              HorizontalAlignment="Right" Margin="0,0,10,0" ClickCommand="{Binding AddProp}"/>
+                            <Rectangle Fill="Black" Height="2" Width="{Binding ElementName=border, Path=ActualWidth}"
+                                       VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <ListView x:Name="list" ItemsSource="{Binding Performances}" IsSynchronizedWithCurrentItem="True">
+                            <ListView.Style>
+                                <Style TargetType="{x:Type ListView}">
+                                    <Setter Property="BorderBrush" Value="Transparent"/>
+                                    <Setter Property="BorderThickness" Value="2"/>
+                                </Style>
+                            </ListView.Style>
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="Margin" Value="5"/>
+                                    <Setter Property="Background" Value="#D9D9D9"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListViewItem">
+                                                <Border Background="{TemplateBinding Background}" BorderBrush="Black" Height="50"
+                                                        BorderThickness="1" CornerRadius="12" Padding="10,5,10,5">
+                                                    <ContentPresenter/>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <DockPanel x:Name="container">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="Loaded">
+                                                <i:InvokeCommandAction Command="{Binding Init}" CommandParameter="{Binding ElementName=container}"/>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                        <TextBlock Style="{StaticResource SimpleTextB}" Text="{Binding Name}" Width="250"/>
+                                        <TextBlock Style="{StaticResource SimpleTextB}" Text="{Binding Tag}" Width="150"/>
+                                        <TextBlock Style="{StaticResource SimpleTextB}" Text="{Binding Value}" Width="150"/>
+                                        <TextBlock Style="{StaticResource SimpleTextB}" Text="{Binding Dependency}" Width="150"/>
+
+                                        <cui:CircleButton x:Name="editButton" Radius="35" DockPanel.Dock="Right" Margin="5,0,0,0"
+                                                          ImageSource="/Resources/options.png" ClickCommand="{Binding Edit}"/>
+                                        <cui:CircleButton x:Name="deleteButton" Radius="35" DockPanel.Dock="Right" ClickCommand="{Binding Delete}"
+                                                          ImageSource="/Resources/delete.png" HorizontalAlignment="Right"/>
+                                    </DockPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </StackPanel>
+                </Border>
+
+                <Button Style="{StaticResource CustomButton}" Height="40" Width="150" Content="Submit"
+                                Command="{Binding Submit}" HorizontalAlignment="Right" Margin="0,35,0,35"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

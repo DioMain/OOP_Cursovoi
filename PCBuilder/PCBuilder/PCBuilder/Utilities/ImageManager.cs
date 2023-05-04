@@ -22,7 +22,7 @@ namespace PCBuilder.Utilites
             string name = Path.GetFileName(path);
 
             if (File.Exists(Path.Combine("Images", name)))
-                return "Error";
+                return name;
 
             File.Copy(path, Path.Combine("Images", name));
 
