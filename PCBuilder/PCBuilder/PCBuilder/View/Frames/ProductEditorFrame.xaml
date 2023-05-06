@@ -83,7 +83,8 @@
                             <Rectangle Fill="Black" Height="2" Width="{Binding ElementName=border, Path=ActualWidth}"
                                        VerticalAlignment="Bottom"/>
                         </Grid>
-                        <ListView x:Name="list" ItemsSource="{Binding Performances}" IsSynchronizedWithCurrentItem="True">
+                        <ListView x:Name="list" ItemsSource="{Binding Performances}" IsSynchronizedWithCurrentItem="True"
+                                  >
                             <ListView.Style>
                                 <Style TargetType="{x:Type ListView}">
                                     <Setter Property="BorderBrush" Value="Transparent"/>

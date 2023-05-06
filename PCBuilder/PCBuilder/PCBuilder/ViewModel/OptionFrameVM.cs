@@ -25,6 +25,8 @@ namespace PCBuilder.ViewModel
                 if (LocalizationManager.Instance.Current.ToString() == Items[i])
                     owner.combo.SelectedIndex = i;
             }
+
+            AnimateAwake(owner.container);
         }
 
         #region Commands

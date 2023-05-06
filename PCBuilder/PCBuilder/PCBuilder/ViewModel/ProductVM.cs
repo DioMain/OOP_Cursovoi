@@ -138,16 +138,9 @@ namespace PCBuilder.ViewModel
             {
                 CatalogFrameVM frame = (CatalogFrameVM)_owner;
 
-                if (!frame.Mode)
-                {
-                    MainWindowVM windowVM = frame.OwnerWindow.DataContext as MainWindowVM;
+                MainWindowVM windowVM = frame.OwnerWindow.DataContext as MainWindowVM;
 
-                    windowVM.PushSubPage(new ProductCartFrame(frame.OwnerWindow, Product));
-                }
-                else
-                {
-                    // Для Template editor
-                }             
+                windowVM.PushSubPage(new ProductCartFrame(frame.OwnerWindow, Product));
             }
             else if (_owner is ProductViewerFrameVM)
             {
@@ -198,7 +191,16 @@ namespace PCBuilder.ViewModel
         }
         private void TemplateClickExecuted(object obj)
         {
-            MessageBox.Show("It works!");
+            if (_owner is CatalogFrameVM)
+            {
+                CatalogFrameVM frame = (CatalogFrameVM)_owner;
+
+                frame.SellectProduct(Product);
+
+                MainWindowVM windowVM = frame.OwnerWindow.DataContext as MainWindowVM;
+
+                windowVM.PopSubPage();
+            }
         }
 
         #endregion

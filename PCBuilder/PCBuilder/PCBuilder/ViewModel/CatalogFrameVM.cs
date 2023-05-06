@@ -18,6 +18,8 @@ using PCBuilder.View.Popups;
 
 namespace PCBuilder.ViewModel
 {
+    public delegate void ProductSellected(Product selletedProduct);
+
     public class CatalogFrameVM : FrameViewModel<CatalogFrame, MainWindow>
     {
         private List<ProductVM> _products;
@@ -26,7 +28,14 @@ namespace PCBuilder.ViewModel
 
         private List<ProductVM> _resultProducts;
 
+        private ProductType _productType;
+
+
         private List<IFilter<ProductVM>> _filters;
+        public List<IFilter<ProductVM>> Filters
+        {
+            get => _filters;
+        }
 
         public List<ProductVM> Products
         {
@@ -38,14 +47,14 @@ namespace PCBuilder.ViewModel
             }
         }
         
-        public event Action OnResult;
+        public event ProductSellected OnProductSellected;
 
         /// <summary>
         /// Режим каталога (false - for basket, true - for template)
         /// </summary>
         public bool Mode { get; private set; }
 
-        public CatalogFrameVM(CatalogFrame owner, MainWindow window, bool mode) : base(owner, window)
+        public CatalogFrameVM(CatalogFrame owner, MainWindow window, ProductType productType = ProductType.Unknown) : base(owner, window)
         {
             _products = new List<ProductVM>();
             _filters = new List<IFilter<ProductVM>>();
@@ -60,7 +69,17 @@ namespace PCBuilder.ViewModel
 
             owner.textFilterBox.Changed += (sender, args) => { FilterByText(); };
 
-            Mode = mode;
+            Mode = productType != ProductType.Unknown;
+            _productType = productType;
+
+            if (Mode)
+            {
+                Filters.Add(new TypeFilter(productType.ToString()));
+
+                ApplyFilters();
+            }
+
+            AnimateAwake(owner.container);
         }
 
         private void FilterByText()
@@ -78,10 +97,10 @@ namespace PCBuilder.ViewModel
                 _textFilteredProducts = _products;
 
 
-            ApplyFilers();
+            ApplyFilters();
         }
 
-        public void ApplyFilers()
+        public void ApplyFilters()
         {
             List<ProductVM> products = _textFilteredProducts;
 
@@ -92,6 +111,8 @@ namespace PCBuilder.ViewModel
 
             Products = products;
         }
+
+        public void SellectProduct(Product product) => OnProductSellected.Invoke(product);
 
         #region Commands
 
@@ -110,13 +131,13 @@ namespace PCBuilder.ViewModel
         }
         private void SetFiltersExecuted(object obj)
         {
-            FilterPopup popup = new FilterPopup(_filters);
+            FilterPopup popup = new FilterPopup(_filters, Mode);
 
             popup.ShowDialog();
 
             _filters = popup.GetResult();
 
-            ApplyFilers();
+            ApplyFilters();
         }
 
         #endregion
@@ -138,7 +159,11 @@ namespace PCBuilder.ViewModel
         {
             _filters.Clear();
 
-            ApplyFilers();
+            if (Mode)
+                Filters.Add(new TypeFilter(_productType.ToString()));
+
+
+            ApplyFilters();
         }
 
         #endregion

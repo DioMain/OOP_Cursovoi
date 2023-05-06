@@ -73,7 +73,15 @@ namespace PCBuilder.ViewModel
                 _performances.Add(new PerformanceVM(item));
 
             if (Performances == null || Performances.Count == 0)
-                Owner.list.Visibility = System.Windows.Visibility.Collapsed;
+                Owner.list.Visibility = Visibility.Collapsed;
+
+            MainWindowVM mainWindow = window.DataContext as MainWindowVM;
+            if (mainWindow.SectionId == 3)
+            {
+                owner.toBasketButton.Visibility = Visibility.Hidden;
+            }
+
+            AnimateAwake(owner.container);
         }
 
         #region Commands

@@ -9,7 +9,7 @@
       d:DesignHeight="645" d:DesignWidth="976"
       Title="OptionFrame">
 
-    <Grid>
+    <Grid x:Name="container">
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition/>

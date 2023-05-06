@@ -29,7 +29,7 @@ namespace PCBuilder.ViewModel
         }
         public FilterPopupVM(FilterPopup owner, List<IFilter<ProductVM>> current) : base(owner)
         {
-            filters = new List<IFilter<ProductVM>>();
+            filters = current;
 
             foreach (var item in Enum.GetNames(typeof(ProductType)))
             {

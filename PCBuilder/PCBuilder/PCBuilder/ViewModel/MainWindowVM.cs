@@ -25,6 +25,8 @@ namespace PCBuilder.ViewModel
 
         public Page CurrentSubPage { get => _subPages.Count > 0 ? _subPages.Peek() : null; }
 
+        public Page SectionPage { get => _sectionPage; }
+
         private int sectionId;
         /// <summary>
         /// 0 - user; 1 - basket; 2 - catalog; 3 - editor; 4 - options; 5 - admin
@@ -119,7 +121,7 @@ namespace PCBuilder.ViewModel
                     _sectionPage = new CatalogFrame(Owner);
                     break;
                 case 3:
-                    
+                    _sectionPage = new TemplateViewerFrame(Owner);
                     break;
                 case 4:
                     _sectionPage = new OptionFrame(Owner);

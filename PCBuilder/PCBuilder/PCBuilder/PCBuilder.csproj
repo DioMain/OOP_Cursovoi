@@ -175,6 +175,7 @@
     <Compile Include="Repositories\TemplateItemRepository.cs" />
     <Compile Include="Repositories\TemplateRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Utilities\TemplateValidator.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BasketFrameVM.cs" />
     <Compile Include="ViewModel\BasketItemVM.cs" />
@@ -192,6 +193,10 @@
     <Compile Include="ViewModel\ProductViewerFrameVM.cs" />
     <Compile Include="ViewModel\ProductVM.cs" />
     <Compile Include="ViewModel\RegistrationWindowVM.cs" />
+    <Compile Include="ViewModel\TemplateEditorFrameVM.cs" />
+    <Compile Include="ViewModel\TemplateItemVM.cs" />
+    <Compile Include="ViewModel\TemplateViewerFrameVM.cs" />
+    <Compile Include="ViewModel\TemplateVM.cs" />
     <Compile Include="ViewModel\UserFrameVM.cs" />
     <Compile Include="ViewModel\WindowViewModel.cs" />
     <Compile Include="View\Frames\BasketFrame.xaml.cs">

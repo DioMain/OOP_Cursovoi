@@ -10,7 +10,7 @@
       d:DesignHeight="645" d:DesignWidth="976"
       Title="BasketFrame">
 
-    <Grid>
+    <Grid x:Name="container">
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition/>

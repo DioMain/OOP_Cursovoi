@@ -3,12 +3,92 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:local="clr-namespace:PCBuilder.View.Frames"
+      xmlns:cui="clr-namespace:PCBuilder.CustomUI"
       mc:Ignorable="d" 
       d:DesignHeight="645" d:DesignWidth="976"
       Title="TemplateEditorFrame">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#5F7FF0" Grid.Row="0" CornerRadius="0,9,0,0">
+            <TextBlock Grid.Row="0" Text="Template editor" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
+        </Border>
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel Orientation="Vertical" Margin="48,24,48,0">
+                <DockPanel LastChildFill="False" Height="40">
+                    <cui:TextBoxEx x:Name="nameBox" Width="250" Placeholder="Name"/>
+
+                    <TextBlock DockPanel.Dock="Right" Style="{StaticResource H1TextB}" Text="Name" IsHitTestVisible="False"/>
+                </DockPanel>
+
+                <TextBlock Style="{StaticResource H1TextB}" FontSize="46" Text="Name" IsHitTestVisible="False"/>
+                <TextBox x:Name="descBox" Style="{StaticResource CustomTextBoxMultiLine}" Height="120" FontSize="16"/>
+
+                <ListView Margin="0,25,0,25" ItemsSource="{Binding Items}" ScrollViewer.IsDeferredScrollingEnabled="False">
+                    <ListView.Style>
+                        <Style TargetType="{x:Type ListView}">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                        </Style>
+                    </ListView.Style>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="ListViewItem">
+                                        <Border Background="#F3F3F3" Height="125" CornerRadius="12" Margin="0,0,0,16">
+                                            <ContentPresenter/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid x:Name="container">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Loaded">
+                                        <i:InvokeCommandAction Command="{Binding Init}" CommandParameter="{Binding ElementName=container}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="112"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="80"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Image x:Name="img" RenderOptions.BitmapScalingMode="HighQuality" Margin="20"
+                                        Source="/Resources/cpu.png" Grid.Column="0"/>
+
+                                <DockPanel Grid.Column="1" LastChildFill="False">
+                                    <TextBlock DockPanel.Dock="Top" Style="{StaticResource H1TextB}" Text="{Binding Name}" Margin="0,20,0,0"/>
+                                    <TextBlock DockPanel.Dock="Bottom" Style="{StaticResource H1TextB}" Text="{Binding Price}" Margin="0,0,0,20"/>
+                                </DockPanel>
+
+                                <StackPanel Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center">
+                                    <cui:CircleButton x:Name="moreButton" Radius="40" ImageSource="/Resources/more.png" ClickCommand="{Binding More}"/>
+                                    <cui:CircleButton x:Name="editButton" Radius="40" ImageSource="/Resources/options.png" Margin="0,10,0,0" ClickCommand="{Binding Edit}"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </ScrollViewer>
+
+        <Grid Grid.Row="2" Background="#F0F0F0">
+            <TextBlock Style="{StaticResource H1TextB}" Text="{Binding TotalPrice}" VerticalAlignment="Center" Margin="25,0,0,0"/>
+            <Button Style="{StaticResource CustomButton}" VerticalAlignment="Center" HorizontalAlignment="Right"
+                    Height="45" Width="175" Content="Submit" Margin="0,0,35,0" Command="{Binding Submit}"/>
+        </Grid>
     </Grid>
 </Page>

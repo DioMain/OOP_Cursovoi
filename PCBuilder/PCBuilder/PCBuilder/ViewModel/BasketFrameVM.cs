@@ -38,6 +38,8 @@ namespace PCBuilder.ViewModel
             BasketManager.Instance.CheckItem();
 
             SyncData();
+
+            AnimateAwake(owner.container);
         }
 
         public void SyncData()

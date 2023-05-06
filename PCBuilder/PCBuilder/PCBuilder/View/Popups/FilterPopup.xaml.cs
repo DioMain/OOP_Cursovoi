@@ -24,21 +24,25 @@ namespace PCBuilder.View.Popups
     {
         private FilterPopupVM viewModel;
 
-        public FilterPopup()
+        public FilterPopup(bool blockType = false)
         {
             InitializeComponent();
 
             viewModel = new FilterPopupVM(this);
 
             DataContext = viewModel;
+
+            combo.IsEnabled = !blockType;
         }
-        public FilterPopup(List<IFilter<ProductVM>> current)
+        public FilterPopup(List<IFilter<ProductVM>> current, bool blockType = false)
         {
             InitializeComponent();
 
             viewModel = new FilterPopupVM(this, current);
 
             DataContext = viewModel;
+
+            combo.IsEnabled = !blockType;
         }
 
         public List<IFilter<ProductVM>> GetResult() => viewModel.filters;

@@ -43,6 +43,6 @@ namespace PCBuilder.Model
 
     public enum ProductType
     {
-        Unknown, CPU, GPU, RAM, Memory, Case, PowerUnit, MotherBroad
+        Unknown, CPU, GPU, RAM, Memory, Case, PowerUnit, MotherBroad, СoolingSystem
     }
 }

@@ -213,4 +213,7 @@
   <data name="Loc_Reg_Submit" xml:space="preserve">
     <value>Подтвердить</value>
   </data>
+  <data name="Loc_TempEdit_ProdNameUnset" xml:space="preserve">
+    <value>Пусто</value>
+  </data>
 </root>

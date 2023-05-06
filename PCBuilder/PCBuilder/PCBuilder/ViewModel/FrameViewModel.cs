@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
 
 namespace PCBuilder.ViewModel
 {
@@ -19,6 +20,19 @@ namespace PCBuilder.ViewModel
         {
             Owner = owner;
             OwnerWindow = window;
+        }
+
+        protected void AnimateAwake(FrameworkElement block)
+        {
+            ThicknessAnimation marginAnim = new ThicknessAnimation();
+
+            marginAnim.From = new Thickness(0,15,0,0);
+            marginAnim.To = new Thickness(0);
+            marginAnim.EasingFunction = new QuadraticEase() { EasingMode = EasingMode.EaseOut };
+
+            marginAnim.Duration = TimeSpan.FromSeconds(0.4);
+
+            block.BeginAnimation(FrameworkElement.MarginProperty, marginAnim);
         }
     }
 }

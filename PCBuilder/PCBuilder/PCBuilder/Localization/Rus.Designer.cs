@@ -347,5 +347,14 @@ namespace PCBuilder.Localization {
                 return ResourceManager.GetString("Loc_Reg_Submit", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пусто.
+        /// </summary>
+        public static string Loc_TempEdit_ProdNameUnset {
+            get {
+                return ResourceManager.GetString("Loc_TempEdit_ProdNameUnset", resourceCulture);
+            }
+        }
     }
 }

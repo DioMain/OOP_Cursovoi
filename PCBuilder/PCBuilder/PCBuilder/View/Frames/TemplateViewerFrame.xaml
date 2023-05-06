@@ -3,12 +3,124 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:local="clr-namespace:PCBuilder.View.Frames"
+      xmlns:cui="clr-namespace:PCBuilder.CustomUI"
       mc:Ignorable="d" 
       d:DesignHeight="645" d:DesignWidth="976"
       Title="TemplateViewerFrame">
 
-    <Grid>
-        
+    <Grid x:Name="container">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="160"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Background="#5F7FF0" Grid.Row="0" CornerRadius="0,9,0,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="17*"/>
+                    <RowDefinition Height="15*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Templates" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
+
+                <DockPanel Grid.Row="1" Margin="48,0,48,15">
+                    <Border DockPanel.Dock="Left" Background="#5471DA" CornerRadius="20" Padding="10,10,10,10">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Style="{StaticResource CustomButton}" Command="{Binding ClickAll}" Content="All" FontSize="14" Width="100" Margin="10,0,0,0"/>
+                            <Button Style="{StaticResource CustomButton}" Command="{Binding ClickMy}" Content="My" FontSize="14" Width="100" Margin="10,0,0,0"/>
+                            <Button Style="{StaticResource CustomButton}" Command="{Binding Create}" Content="Create" FontSize="14" Width="100" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+
+                    <cui:TextBoxEx x:Name="textFilterBox" DockPanel.Dock="Right" Width="250"
+                                   HorizontalAlignment="Right" Placeholder="Tempalate name" Height="40"/>
+                </DockPanel>
+            </Grid>
+        </Border>
+
+        <ListView Grid.Row="1" x:Name="list" Padding="48, 0, 48, 0" ScrollViewer.CanContentScroll="False" ItemsSource="{Binding Templates}"
+                      ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.Style>
+                <Style TargetType="{x:Type ListView}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </ListView.Style>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Margin" Value="0,5,0,0" />
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" Margin="0, 16, 0, 0"
+                                            BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                                    <ContentPresenter/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border x:Name="conteiner">
+                        <Border.Style>
+                            <Style TargetType="{x:Type Border}">
+                                <Setter Property="Background" Value="#F2F0F0"/>
+                                <Setter Property="Height" Value="200"/>
+                                <Setter Property="CornerRadius" Value="16"/>
+                                <Setter Property="BorderBrush" Value="#F2F0F0"/>
+                                <Setter Property="BorderThickness" Value="4"/>
+                                <Style.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation Storyboard.TargetProperty="BorderBrush.Color"
+                                                        From="#dbd6d6" To="#F2F0F0" Duration="0:0:0.4"/>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Border.Style>
+
+                        <Grid>
+                            <Grid Background="Transparent">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Loaded">
+                                        <i:InvokeCommandAction Command="{Binding Init}" CommandParameter="{Binding ElementName=conteiner}"/>
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="150"/>
+                                </Grid.ColumnDefinitions>
+
+                                <DockPanel Grid.Column="0" Margin="16,0,0,0">
+                                    <TextBlock DockPanel.Dock="Top" Foreground="Black" Style="{StaticResource H2Text}" TextAlignment="Left" Text="{Binding Name}" Margin="0,15,0,0"/>
+                                    <TextBlock DockPanel.Dock="Top" Foreground="Black" Style="{StaticResource H2Text}" TextAlignment="Left" Text="{Binding Description}" FontSize="18" Margin="0,5,0,0" TextWrapping="Wrap"/>
+                                    <TextBlock DockPanel.Dock="Bottom" Foreground="Black" Style="{StaticResource H2Text}" TextAlignment="Left" Text="{Binding Creator}" VerticalAlignment="Bottom" FontSize="18" Margin="0,0,0,15"/>
+                                </DockPanel>
+                                <Grid Grid.Column="1">
+                                    <TextBlock Foreground="Black" Style="{StaticResource H2Text}" Text="{Binding Price}"
+                                               VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,15,15,0"/>
+                                </Grid>
+                            </Grid>
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,15,15">
+                                <cui:CircleButton x:Name="more" Radius="40"
+                                                          ClickCommand="" Visibility="Collapsed" ImageSource="/Resources/more.png"/>
+                                <cui:CircleButton x:Name="tobasket" Radius="40" 
+                                                          ClickCommand="" Visibility="Collapsed" ImageSource="/Resources/basket.png"/>
+                                <cui:CircleButton x:Name="delete" Radius="40"
+                                                          ClickCommand="" Visibility="Collapsed" ImageSource="/Resources/delete.png"/>
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

@@ -32,6 +32,8 @@ namespace PCBuilder.ViewModel
             {
                 _orders.Add(new OrderVM(item, this));
             }
+
+            AnimateAwake(owner.container);
         }
     }
 }

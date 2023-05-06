@@ -8,7 +8,7 @@
       d:DesignHeight="645" d:DesignWidth="976"
       Title="UserFrame">
 
-    <Grid>
+    <Grid x:Name="container" Width="976">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition/>

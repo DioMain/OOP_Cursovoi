@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PCBuilder.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace PCBuilder.View.Frames
     /// </summary>
     public partial class TemplateEditorFrame : Page
     {
-        public TemplateEditorFrame()
+        public TemplateEditorFrame(MainWindow mainWindow)
         {
             InitializeComponent();
+
+            DataContext = new TemplateEditorFrameVM(this, mainWindow);
         }
     }
 }

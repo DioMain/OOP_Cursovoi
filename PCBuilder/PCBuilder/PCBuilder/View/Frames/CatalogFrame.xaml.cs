@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PCBuilder.Model;
 using PCBuilder.ViewModel;
 
 namespace PCBuilder.View.Frames
@@ -21,18 +22,15 @@ namespace PCBuilder.View.Frames
     /// </summary>
     public partial class CatalogFrame : Page
     {
-        private MainWindow mainWindow;
+        public CatalogFrameVM viewModel { get; private set; }
 
-        private bool mode;
-
-        public CatalogFrame(MainWindow owner, bool mode = false)
+        public CatalogFrame(MainWindow owner, ProductType productType = ProductType.Unknown)
         {
             InitializeComponent();
 
-            mainWindow = owner;
+            viewModel = new CatalogFrameVM(this, owner, productType);
 
-            DataContext = new CatalogFrameVM(this, owner, mode);
-            this.mode = mode;
+            DataContext = viewModel;
         }
     }
 }
