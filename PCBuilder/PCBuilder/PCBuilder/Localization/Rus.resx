@@ -147,6 +147,9 @@
   <data name="Loc_Login_RetryButton" xml:space="preserve">
     <value>Повтор</value>
   </data>
+  <data name="Loc_MesPopup_DelTemplate" xml:space="preserve">
+    <value>Сборка удалена!</value>
+  </data>
   <data name="Loc_MP_Submit" xml:space="preserve">
     <value>Хорошо</value>
   </data>
@@ -213,7 +216,25 @@
   <data name="Loc_Reg_Submit" xml:space="preserve">
     <value>Подтвердить</value>
   </data>
+  <data name="Loc_TempEdit_Popup_HaveES" xml:space="preserve">
+    <value>Есть пустые слоты!</value>
+  </data>
+  <data name="Loc_TempEdit_Popup_NameError" xml:space="preserve">
+    <value>Поле имени пустое!</value>
+  </data>
+  <data name="Loc_TempEdit_Popup_Tittle" xml:space="preserve">
+    <value>Ошибка проверки</value>
+  </data>
+  <data name="Loc_TempEdit_Popup_VadlidError" xml:space="preserve">
+    <value>Не подходящие компоненты!</value>
+  </data>
   <data name="Loc_TempEdit_ProdNameUnset" xml:space="preserve">
     <value>Пусто</value>
+  </data>
+  <data name="Loc_TempEdit_SlotIsEmpty" xml:space="preserve">
+    <value>Пустой слот!</value>
+  </data>
+  <data name="Loc_TempEdit_ValidateErrMesTemp" xml:space="preserve">
+    <value>Не совподение</value>
   </data>
 </root>

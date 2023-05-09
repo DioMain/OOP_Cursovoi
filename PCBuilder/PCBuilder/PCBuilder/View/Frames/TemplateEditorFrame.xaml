@@ -71,7 +71,11 @@
 
                                 <DockPanel Grid.Column="1" LastChildFill="False">
                                     <TextBlock DockPanel.Dock="Top" Style="{StaticResource H1TextB}" Text="{Binding Name}" Margin="0,20,0,0"/>
-                                    <TextBlock DockPanel.Dock="Bottom" Style="{StaticResource H1TextB}" Text="{Binding Price}" Margin="0,0,0,20"/>
+                                    <Grid DockPanel.Dock="Bottom">
+                                        <TextBlock Style="{StaticResource H1TextB}" HorizontalAlignment="Left" Text="{Binding Price}" Margin="0,0,0,20"/>
+                                        <TextBlock Style="{StaticResource H1TextB}" FontSize="16" VerticalAlignment="Bottom"
+                                                   HorizontalAlignment="Right" Text="{Binding ErrorText}" Foreground="red" Margin="0,0,0,20"/>
+                                    </Grid>
                                 </DockPanel>
 
                                 <StackPanel Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center">

@@ -1,0 +1,61 @@
+﻿<Window x:Class="PCBuilder.View.Popups.TemplateItemViewerPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PCBuilder.View.Popups"
+        mc:Ignorable="d" Style="{StaticResource LWindowStyle}" WindowStyle="None" ResizeMode="CanMinimize"
+        Title="TemplateItemViewerPopup" Height="675" Width="400" Background="#4268EF">
+    <StackPanel Margin="20,0,20,0">
+        <TextBlock Style="{StaticResource H1Text}" Text="{Binding TemplateName}"/>
+        <TextBlock Style="{StaticResource H2Text}" Text="{Binding Creator}"/>
+        <TextBlock Style="{StaticResource SimpleText}" Text="{Binding Description}" Height="70"/>
+
+        <ListView ItemsSource="{Binding Items}" Height="500" ScrollViewer.CanContentScroll="False" BorderBrush="#314FBA" BorderThickness="2"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ListView.Style>
+                <Style TargetType="{x:Type ListView}">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </ListView.Style>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListViewItem">
+                                <Border Background="#314FBA" Height="75" CornerRadius="12" Margin="0,0,0,16">
+                                    <ContentPresenter/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="border" Grid.Column="0" Width="60" Height="60" CornerRadius="12">
+                            <Border.Clip>
+                                <RectangleGeometry Rect="0, 0, 60, 60" RadiusX="12" RadiusY="12"/>
+                            </Border.Clip>
+                            <Grid Background="Transparent">
+                                <Image Source="{Binding Image}" RenderOptions.BitmapScalingMode="Fant"/>
+                            </Grid>
+                        </Border>
+                        <DockPanel Grid.Column="1" LastChildFill="False" Margin="0,10,0,10">
+                            <TextBlock DockPanel.Dock="Top" FontSize="14" Text="{Binding Name}" Style="{StaticResource H2Text}" HorizontalAlignment="Left"/>
+                            <TextBlock DockPanel.Dock="Bottom" FontSize="14" Text="{Binding Price}" Style="{StaticResource H2Text}" HorizontalAlignment="Left"/>
+                        </DockPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        <TextBlock Style="{StaticResource H2Text}" Text="{Binding TotalPrice}" Margin="0,10,0,0"/>
+    </StackPanel>
+</Window>

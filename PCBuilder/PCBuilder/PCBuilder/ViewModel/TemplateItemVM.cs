@@ -40,6 +40,17 @@ namespace PCBuilder.ViewModel
         public string Name { get => product != null ? product.Name : Application.Current.Resources["Loc_TempEdit_ProdNameUnset"] as string; }
         public string Price { get => product != null ? $"{product.Price}$" : "0$"; }
 
+        private string errorText;
+        public string ErrorText
+        {
+            get => errorText;
+            set
+            {
+                errorText = value;
+                OnPropertyChanged(nameof(ErrorText));
+            }
+        }
+
         public TemplateItemVM(ProductType targetType, object owner)
         {
             this.targetType = targetType;

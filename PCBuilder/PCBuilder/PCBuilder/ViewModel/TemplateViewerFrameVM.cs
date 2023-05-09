@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PCBuilder.ViewModel
@@ -30,6 +31,8 @@ namespace PCBuilder.ViewModel
             _templates = new List<TemplateVM>();
 
             SyncData();
+
+            Owner.textFilterBox.Changed += (object sender, RoutedEventArgs e) => { TextFilter(); OnPropertyChanged(nameof(Templates)); };
 
             AnimateAwake(owner.container);
         }
@@ -62,7 +65,9 @@ namespace PCBuilder.ViewModel
 
         public void Delete(TemplateVM template)
         {
+            DataBaseManager.Instance.Templates.Delete(template.Template.Id);
 
+            SyncData();
         }
 
         #region Commands

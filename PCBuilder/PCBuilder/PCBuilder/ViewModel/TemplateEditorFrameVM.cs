@@ -59,11 +59,27 @@ namespace PCBuilder.ViewModel
 
         private void DispatchErrors(TemplateValidateError[] errors)
         {
-
+            foreach (var item in Items)
+            {
+                foreach (var item1 in errors)
+                {
+                    if (item1.ProductType == item.Product.ProductType)
+                    {
+                        item.ErrorText = item1.Message;
+                    }
+                }
+            }
         }
-        private void DispatchEmpty()
+        private void DispatchEmpty(TemplateItemVM itemVM)
         {
-
+            itemVM.ErrorText = Application.Current.Resources["Loc_TempEdit_SlotIsEmpty"] as string;
+        }
+        private void DropErrors()
+        {
+            foreach (var item in Items)
+            {
+                item.ErrorText = string.Empty;
+            }
         }
 
         private void CreateTemplate()
@@ -111,18 +127,24 @@ namespace PCBuilder.ViewModel
         {
             try
             {
+                DropErrors();
+
                 if (string.IsNullOrEmpty(Owner.nameBox.Text))
-                    throw new ApplicationException("Name field is empty!");
+                    throw new ApplicationException(Application.Current.Resources["Loc_TempEdit_Popup_NameError"] as string);
 
-
+                bool haveEmpty = false;
                 foreach (var item in _items)
                 {
                     if (item.Product == null)
                     {
-                        DispatchEmpty();
-                        throw new ApplicationException("Have empty slots!");
+                        DispatchEmpty(item);
+                        haveEmpty = true;
                     }
                 }
+
+                if (haveEmpty)
+                    throw new ApplicationException(Application.Current.Resources["Loc_TempEdit_Popup_HaveES"] as string);
+
 
                 List<Product> products = new List<Product>();
 
@@ -136,14 +158,14 @@ namespace PCBuilder.ViewModel
                 if (errors.Count > 0)
                 {
                     DispatchErrors(errors.ToArray());
-                    throw new ApplicationException("Incompatible Components!");
+                    throw new ApplicationException(Application.Current.Resources["Loc_TempEdit_Popup_VadlidError"] as string);
                 }
 
                 CreateTemplate();
             }
             catch (ApplicationException error)
             {
-                new MessagePopup("Validate error", error.Message, true).ShowDialog();
+                new MessagePopup(Application.Current.Resources["Loc_TempEdit_Popup_Tittle"] as string, error.Message, true).ShowDialog();
             }
         }
 

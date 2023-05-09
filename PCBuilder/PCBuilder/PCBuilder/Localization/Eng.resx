@@ -147,6 +147,9 @@
   <data name="Loc_Login_RetryButton" xml:space="preserve">
     <value>Retry</value>
   </data>
+  <data name="Loc_MesPopup_DelTemplate" xml:space="preserve">
+    <value>Template deleted!</value>
+  </data>
   <data name="Loc_MP_Submit" xml:space="preserve">
     <value>Ok</value>
   </data>
@@ -213,7 +216,25 @@
   <data name="Loc_Reg_Submit" xml:space="preserve">
     <value>Submit</value>
   </data>
+  <data name="Loc_TempEdit_Popup_HaveES" xml:space="preserve">
+    <value>Have empty slots!</value>
+  </data>
+  <data name="Loc_TempEdit_Popup_NameError" xml:space="preserve">
+    <value>Name field is empty!</value>
+  </data>
+  <data name="Loc_TempEdit_Popup_Tittle" xml:space="preserve">
+    <value>Validation error</value>
+  </data>
+  <data name="Loc_TempEdit_Popup_VadlidError" xml:space="preserve">
+    <value>Incompatible components!</value>
+  </data>
   <data name="Loc_TempEdit_ProdNameUnset" xml:space="preserve">
     <value>Empty</value>
+  </data>
+  <data name="Loc_TempEdit_SlotIsEmpty" xml:space="preserve">
+    <value>Slot is empty!</value>
+  </data>
+  <data name="Loc_TempEdit_ValidateErrMesTemp" xml:space="preserve">
+    <value>Not equals</value>
   </data>
 </root>

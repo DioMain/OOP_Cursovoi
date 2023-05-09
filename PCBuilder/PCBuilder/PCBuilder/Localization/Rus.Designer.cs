@@ -151,6 +151,15 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Сборка удалена!.
+        /// </summary>
+        public static string Loc_MesPopup_DelTemplate {
+            get {
+                return ResourceManager.GetString("Loc_MesPopup_DelTemplate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Хорошо.
         /// </summary>
         public static string Loc_MP_Submit {
@@ -349,11 +358,65 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Есть пустые слоты!.
+        /// </summary>
+        public static string Loc_TempEdit_Popup_HaveES {
+            get {
+                return ResourceManager.GetString("Loc_TempEdit_Popup_HaveES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Поле имени пустое!.
+        /// </summary>
+        public static string Loc_TempEdit_Popup_NameError {
+            get {
+                return ResourceManager.GetString("Loc_TempEdit_Popup_NameError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Ошибка проверки.
+        /// </summary>
+        public static string Loc_TempEdit_Popup_Tittle {
+            get {
+                return ResourceManager.GetString("Loc_TempEdit_Popup_Tittle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не подходящие компоненты!.
+        /// </summary>
+        public static string Loc_TempEdit_Popup_VadlidError {
+            get {
+                return ResourceManager.GetString("Loc_TempEdit_Popup_VadlidError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Пусто.
         /// </summary>
         public static string Loc_TempEdit_ProdNameUnset {
             get {
                 return ResourceManager.GetString("Loc_TempEdit_ProdNameUnset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Пустой слот!.
+        /// </summary>
+        public static string Loc_TempEdit_SlotIsEmpty {
+            get {
+                return ResourceManager.GetString("Loc_TempEdit_SlotIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Не совподение.
+        /// </summary>
+        public static string Loc_TempEdit_ValidateErrMesTemp {
+            get {
+                return ResourceManager.GetString("Loc_TempEdit_ValidateErrMesTemp", resourceCulture);
             }
         }
     }

@@ -66,7 +66,7 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border x:Name="conteiner">
+                    <Border x:Name="container">
                         <Border.Style>
                             <Style TargetType="{x:Type Border}">
                                 <Setter Property="Background" Value="#F2F0F0"/>
@@ -91,7 +91,7 @@
                             <Grid Background="Transparent">
                                 <i:Interaction.Triggers>
                                     <i:EventTrigger EventName="Loaded">
-                                        <i:InvokeCommandAction Command="{Binding Init}" CommandParameter="{Binding ElementName=conteiner}"/>
+                                        <i:InvokeCommandAction Command="{Binding Init}" CommandParameter="{Binding ElementName=container}"/>
                                     </i:EventTrigger>
                                 </i:Interaction.Triggers>
                                 <Grid.ColumnDefinitions>
@@ -110,12 +110,12 @@
                                 </Grid>
                             </Grid>
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,15,15">
-                                <cui:CircleButton x:Name="more" Radius="40"
-                                                          ClickCommand="" Visibility="Collapsed" ImageSource="/Resources/more.png"/>
+                                <cui:CircleButton x:Name="delete" Radius="40" Visibility="Collapsed" Margin="0,0,5,0"
+                                                          ClickCommand="{Binding Delete}" ImageSource="/Resources/delete.png"/>
                                 <cui:CircleButton x:Name="tobasket" Radius="40" 
-                                                          ClickCommand="" Visibility="Collapsed" ImageSource="/Resources/basket.png"/>
-                                <cui:CircleButton x:Name="delete" Radius="40"
-                                                          ClickCommand="" Visibility="Collapsed" ImageSource="/Resources/delete.png"/>
+                                                          ClickCommand="{Binding ToBasket}" ImageSource="/Resources/basket.png" Margin="0,0,5,0"/>
+                                <cui:CircleButton x:Name="more" Radius="40"
+                                                          ClickCommand="{Binding More}" ImageSource="/Resources/more.png"/>
                             </StackPanel>
                         </Grid>
                     </Border>

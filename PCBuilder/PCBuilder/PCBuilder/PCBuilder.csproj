@@ -241,6 +241,9 @@
     <Compile Include="View\Popups\PerformanceEditorPopup.xaml.cs">
       <DependentUpon>PerformanceEditorPopup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\Popups\TemplateItemViewerPopup.xaml.cs">
+      <DependentUpon>TemplateItemViewerPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
@@ -414,6 +417,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Popups\PerformanceEditorPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Popups\TemplateItemViewerPopup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

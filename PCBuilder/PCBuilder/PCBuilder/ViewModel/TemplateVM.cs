@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
 using PCBuilder.Repositories;
+using PCBuilder.View.Popups;
+using PCBuilder.Utilities;
 
 namespace PCBuilder.ViewModel
 {
@@ -79,7 +81,98 @@ namespace PCBuilder.ViewModel
         {
             if (_owner is TemplateViewerFrameVM)
             {
+                FrameworkElement element = (FrameworkElement)obj;
 
+                FrameworkElement but0 = element.FindName("delete") as FrameworkElement;
+                FrameworkElement but1 = element.FindName("tobasket") as FrameworkElement;
+                FrameworkElement but2 = element.FindName("more") as FrameworkElement;
+
+                
+                but1.Style = Application.Current.Resources["CB_DEF"] as Style;
+                but2.Style = Application.Current.Resources["CB_DEF"] as Style;
+
+                if (template.CreatorId == User.Current.Id || User.Current.Rights == "ADMIN")
+                {
+                    but0.Style = Application.Current.Resources["CB_RED"] as Style;
+                    but0.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        #endregion
+
+        #region Delete
+
+        private BaseCommand DeleteCommand;
+        public ICommand Delete
+        {
+            get
+            {
+                if (DeleteCommand == null)
+                    DeleteCommand = new BaseCommand(DeleteExecuted);
+
+                return DeleteCommand;
+            }
+        }
+        private void DeleteExecuted(object obj)
+        {
+            if (_owner is TemplateViewerFrameVM templateViewer)
+            {
+                templateViewer.Delete(this);
+
+                new MessagePopup((string)Application.Current.Resources["Loc_Popup_Global_Success"],
+                            (string)Application.Current.Resources["Loc_MesPopup_DelTemplate"], true).ShowDialog();
+            }
+        }
+
+        #endregion
+
+        #region ToBasket
+
+        private BaseCommand ToBasketCommand;
+        public ICommand ToBasket
+        {
+            get
+            {
+                if (ToBasketCommand == null)
+                    ToBasketCommand = new BaseCommand(ToBasketExecuted);
+
+                return ToBasketCommand;
+            }
+        }
+        private void ToBasketExecuted(object obj)
+        {
+            if (_owner is TemplateViewerFrameVM templateViewer)
+            {
+                BasketManager.Instance.Add(template);
+
+                new MessagePopup((string)Application.Current.Resources["Loc_Popup_Global_Success"],
+                            (string)Application.Current.Resources["Loc_Popup_ProdCart_Added"], true).ShowDialog();
+            }
+        }
+
+        #endregion
+
+        #region More
+
+        private BaseCommand MoreCommand;
+        public ICommand More
+        {
+            get
+            {
+                if (MoreCommand == null)
+                    MoreCommand = new BaseCommand(MoreExecuted);
+
+                return MoreCommand;
+            }
+        }
+        private void MoreExecuted(object obj)
+        {
+            if (_owner is TemplateViewerFrameVM)
+            {
+                TemplateItemViewerPopup viewerPopup = new TemplateItemViewerPopup(template);
+
+                viewerPopup.ShowDialog();
             }
         }
 

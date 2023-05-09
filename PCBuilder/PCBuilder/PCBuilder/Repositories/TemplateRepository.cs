@@ -34,6 +34,11 @@ namespace PCBuilder.Repositories
         {
             try
             {
+                foreach (var item in DataBaseManager.Instance.OrderItems.GetAll().Where(i => i.TemplateId == id))
+                {
+                    DataBaseManager.Instance.OrderItems.Delete(item.Id);
+                }
+
                 foreach (var item in GetItems(Get(id)))
                 {
                     DataBaseManager.Instance.TemplateItems.Delete(item.Id);
