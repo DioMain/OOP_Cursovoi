@@ -8,14 +8,14 @@
         mc:Ignorable="d" Style="{StaticResource LWindowStyle}" WindowStyle="None"
         Title="FilterPopup" Height="300" Width="400">
     <StackPanel Orientation="Vertical" Margin="50,0,50,0">
-        <TextBlock Style="{StaticResource H1Text}" Text="Filters" Margin="0,20,0,0"/>
-        <TextBlock Style="{StaticResource H2Text}" Text="Cost" Margin="0,5,0,0"/>
+        <TextBlock Style="{StaticResource H1Text}" Text="{DynamicResource Loc_FilterPopup_Tittle}" Margin="0,20,0,0"/>
+        <TextBlock Style="{StaticResource H2Text}" Text="{DynamicResource Loc_FilterPopup_Price}" Margin="0,5,0,0"/>
         <DockPanel Height="40" Margin="0,5,0,0">
-            <cui:TextBoxEx DockPanel.Dock="Left" x:Name="contFrom"  Width="130" Placeholder="From" OnlyNumbers="True"/>
-            <cui:TextBoxEx DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="contTo" Width="130" Placeholder="To" OnlyNumbers="True"/>
+            <cui:TextBoxEx DockPanel.Dock="Left" x:Name="contFrom"  Width="130" Placeholder="{DynamicResource Loc_FilterPopup_From}" OnlyNumbers="True"/>
+            <cui:TextBoxEx DockPanel.Dock="Right" HorizontalAlignment="Right" x:Name="contTo" Width="130" Placeholder="{DynamicResource Loc_FilterPopup_To}" OnlyNumbers="True"/>
         </DockPanel>
-        <TextBlock Style="{StaticResource H2Text}" Text="Type" Margin="0,5,0,0"/>
+        <TextBlock Style="{StaticResource H2Text}" Text="{DynamicResource Loc_FilterPopup_Type}" Margin="0,5,0,0"/>
         <ComboBox x:Name="combo" Style="{StaticResource CustomComboBox}" Height="40" Margin="0,5,0,0" Width="200"/>
-        <Button Style="{StaticResource CustomButton}" Command="{Binding Submit}" Width="130" Height="40" Margin="0,20,0,0" Content="Confirm" FontSize="14"/>
+        <Button Style="{StaticResource CustomButton}" Command="{Binding Submit}" Width="130" Height="40" Margin="0,20,0,0" Content="{DynamicResource Loc_Global_Confirm}" FontSize="14"/>
     </StackPanel>
 </Window>

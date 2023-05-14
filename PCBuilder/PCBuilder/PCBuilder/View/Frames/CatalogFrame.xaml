@@ -23,19 +23,19 @@
                     <RowDefinition Height="15*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Text="Catalog" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
+                <TextBlock Grid.Row="0" Text="{DynamicResource Loc_Catalog_Tittle}" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
 
                 <DockPanel Grid.Row="1" Margin="48,0,48,15">
                     <Border DockPanel.Dock="Left" Background="#5471DA" CornerRadius="20" Padding="10,10,10,10">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resources/filter.png" Margin="5,0,0,0" RenderOptions.BitmapScalingMode="Fant"/>
-                            <Button Style="{StaticResource CustomButton}" Command="{Binding SetFilters}" Content="Set filters" FontSize="14" Width="125" Margin="10,0,0,0"/>
-                            <Button Style="{StaticResource CustomButton}" Command="{Binding DropFilters}" Content="Drop filters" FontSize="14" Width="125" Margin="10,0,0,0"/>
+                            <Button Style="{StaticResource CustomButton}" Command="{Binding SetFilters}" Content="{DynamicResource Loc_Catalog_FSet}" FontSize="14" Width="125" Margin="10,0,0,0"/>
+                            <Button Style="{StaticResource CustomButton}" Command="{Binding DropFilters}" Content="{DynamicResource Loc_Catalog_FDrop}" FontSize="14" Width="125" Margin="10,0,0,0"/>
                         </StackPanel>
                     </Border>
 
                     <cui:TextBoxEx x:Name="textFilterBox" DockPanel.Dock="Right" Width="250"
-                                   HorizontalAlignment="Right" Placeholder="Product name" Height="40"/>
+                                   HorizontalAlignment="Right" Placeholder="{DynamicResource Loc_Catalog_Search}" Height="40"/>
                 </DockPanel>
             </Grid>
         </Border>

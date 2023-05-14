@@ -102,7 +102,7 @@ namespace PCBuilder.ViewModel
 
         public void ApplyFilters()
         {
-            List<ProductVM> products = _textFilteredProducts;
+            List<ProductVM> products = new List<ProductVM>(_textFilteredProducts);
 
             foreach (var item in _filters)
             {
@@ -131,7 +131,7 @@ namespace PCBuilder.ViewModel
         }
         private void SetFiltersExecuted(object obj)
         {
-            FilterPopup popup = new FilterPopup(_filters, Mode);
+            FilterPopup popup = new FilterPopup(new List<IFilter<ProductVM>>(_filters), Mode);
 
             popup.ShowDialog();
 

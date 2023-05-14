@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PCBuilder.ViewModel
 {
@@ -23,7 +24,7 @@ namespace PCBuilder.ViewModel
             }
         }
 
-        public string Status { get => $"Status: {_order.Status}"; }
+        public string Status { get => $"{Application.Current.Resources["Loc_User_OH_Status"]}: {_order.Status}"; }
         public string Note { get => _order.Note; }
 
         public string OpenDate { get => _order.OpenDate.ToString(); }
@@ -35,7 +36,7 @@ namespace PCBuilder.ViewModel
             {
                 int count = DataBaseManager.Instance.Orders.GetItems(_order).Count;
 
-                return $"Items count: {count}";
+                return $"{Application.Current.Resources["Loc_User_OH_ItemsCount"]}: {count}";
             }
         }
 
@@ -48,10 +49,12 @@ namespace PCBuilder.ViewModel
                 int total = 0;
                 foreach (var item in orderItems)
                 {
-                    if (item.Template == null)
+                    if (item.TemplateId == null)
                         total += item.Product.Price;
                     else
                     {
+                        Template template = DataBaseManager.Instance.Templates.Get(item.TemplateId ?? 0);
+
                         TemplateItem[] templateItems = DataBaseManager.Instance.Templates.GetItems(item.Template).ToArray();
 
                         foreach (var templateItem in templateItems)
@@ -61,7 +64,7 @@ namespace PCBuilder.ViewModel
                     }   
                 }
 
-                return $"Total price: {total}$";
+                return $"{Application.Current.Resources["Loc_User_OH_TotalPrice"]}: {total}$";
             }
         }
 

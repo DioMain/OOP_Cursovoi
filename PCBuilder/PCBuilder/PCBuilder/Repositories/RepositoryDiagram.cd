@@ -81,7 +81,7 @@
     </TypeIdentifier>
   </Class>
   <Interface Name="PCBuilder.Repositories.IRepository&lt;T&gt;">
-    <Position X="9.5" Y="2.75" Width="1.5" />
+    <Position X="9.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
       <FileName>Repositories\IRepository.cs</FileName>

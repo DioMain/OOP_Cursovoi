@@ -117,6 +117,42 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Loc_Basket_Note" xml:space="preserve">
+    <value>Заметка</value>
+  </data>
+  <data name="Loc_Basket_Tittle" xml:space="preserve">
+    <value>Корзина</value>
+  </data>
+  <data name="Loc_Catalog_FDrop" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="Loc_Catalog_FSet" xml:space="preserve">
+    <value>Фильтры</value>
+  </data>
+  <data name="Loc_Catalog_Search" xml:space="preserve">
+    <value>Название продукта</value>
+  </data>
+  <data name="Loc_Catalog_Tittle" xml:space="preserve">
+    <value>Каталог</value>
+  </data>
+  <data name="Loc_FilterPopup_From" xml:space="preserve">
+    <value>От</value>
+  </data>
+  <data name="Loc_FilterPopup_Price" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="Loc_FilterPopup_Tittle" xml:space="preserve">
+    <value>Фильтры</value>
+  </data>
+  <data name="Loc_FilterPopup_To" xml:space="preserve">
+    <value>До</value>
+  </data>
+  <data name="Loc_FilterPopup_Type" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="Loc_Global_Confirm" xml:space="preserve">
+    <value>Подтвердить</value>
+  </data>
   <data name="Loc_Global_EmptyField" xml:space="preserve">
     <value>Пустое поле</value>
   </data>
@@ -216,6 +252,15 @@
   <data name="Loc_Reg_Submit" xml:space="preserve">
     <value>Подтвердить</value>
   </data>
+  <data name="Loc_TEdit_Description" xml:space="preserve">
+    <value>Описание</value>
+  </data>
+  <data name="Loc_TEdit_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Loc_TEdit_Tittle" xml:space="preserve">
+    <value>Редактор сборок</value>
+  </data>
   <data name="Loc_TempEdit_Popup_HaveES" xml:space="preserve">
     <value>Есть пустые слоты!</value>
   </data>
@@ -236,5 +281,47 @@
   </data>
   <data name="Loc_TempEdit_ValidateErrMesTemp" xml:space="preserve">
     <value>Не совподение</value>
+  </data>
+  <data name="Loc_TView_All" xml:space="preserve">
+    <value>Все</value>
+  </data>
+  <data name="Loc_TView_Create" xml:space="preserve">
+    <value>Создать</value>
+  </data>
+  <data name="Loc_TView_My" xml:space="preserve">
+    <value>Мои</value>
+  </data>
+  <data name="Loc_TView_Search" xml:space="preserve">
+    <value>Название сборки</value>
+  </data>
+  <data name="Loc_TView_Tittle" xml:space="preserve">
+    <value>Сборки</value>
+  </data>
+  <data name="Loc_User_Address" xml:space="preserve">
+    <value>Адрес</value>
+  </data>
+  <data name="Loc_User_Email" xml:space="preserve">
+    <value>Электорнная почта</value>
+  </data>
+  <data name="Loc_User_Name" xml:space="preserve">
+    <value>Имя</value>
+  </data>
+  <data name="Loc_User_Number" xml:space="preserve">
+    <value>Контактный номер</value>
+  </data>
+  <data name="Loc_User_OH_ItemsCount" xml:space="preserve">
+    <value>Кол-во пунктов</value>
+  </data>
+  <data name="Loc_User_OH_Status" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="Loc_User_OH_TotalPrice" xml:space="preserve">
+    <value>Цена</value>
+  </data>
+  <data name="Loc_User_OrderHistory" xml:space="preserve">
+    <value>История заказов</value>
+  </data>
+  <data name="Loc_User_Tittle" xml:space="preserve">
+    <value>Пользователь</value>
   </data>
 </root>

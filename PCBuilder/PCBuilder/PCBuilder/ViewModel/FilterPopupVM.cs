@@ -24,12 +24,14 @@ namespace PCBuilder.ViewModel
             {
                 owner.combo.Items.Add(item);
             }
-
+            
             owner.combo.SelectedIndex = 0;
+
+            Owner.Closing += Owner_Closing;
         }
         public FilterPopupVM(FilterPopup owner, List<IFilter<ProductVM>> current) : base(owner)
         {
-            filters = current;
+            filters = new List<IFilter<ProductVM>>();
 
             foreach (var item in Enum.GetNames(typeof(ProductType)))
             {
@@ -57,6 +59,26 @@ namespace PCBuilder.ViewModel
                     }
                 }
             }
+
+            Owner.Closing += Owner_Closing;
+        }
+
+        private void Owner_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Check();
+        }
+
+        private void Check()
+        {
+            if (!string.IsNullOrEmpty(Owner.contFrom.Text) && !string.IsNullOrEmpty(Owner.contTo.Text))
+            {
+                filters.Add(new PriceFilter(int.Parse(Owner.contFrom.Text), int.Parse(Owner.contTo.Text)));
+            }
+
+            if ((string)Owner.combo.SelectedItem != "Unknown")
+            {
+                filters.Add(new TypeFilter((string)Owner.combo.SelectedItem));
+            }
         }
 
         #region Commands
@@ -74,16 +96,6 @@ namespace PCBuilder.ViewModel
         }
         private void DSubmitExecuted(object obj)
         {
-            if (!string.IsNullOrEmpty(Owner.contFrom.Text) && !string.IsNullOrEmpty(Owner.contTo.Text))
-            {
-                filters.Add(new PriceFilter(int.Parse(Owner.contFrom.Text), int.Parse(Owner.contTo.Text)));
-            }
-
-            if ((string)Owner.combo.SelectedItem != "Unknown")
-            {
-                filters.Add(new TypeFilter((string)Owner.combo.SelectedItem));
-            }
-
             Owner.Close();
         }
 

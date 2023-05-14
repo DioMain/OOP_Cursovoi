@@ -23,19 +23,19 @@
                     <RowDefinition Height="15*"/>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Text="Templates" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
+                <TextBlock Grid.Row="0" Text="{DynamicResource Loc_TView_Tittle}" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
 
                 <DockPanel Grid.Row="1" Margin="48,0,48,15">
                     <Border DockPanel.Dock="Left" Background="#5471DA" CornerRadius="20" Padding="10,10,10,10">
                         <StackPanel Orientation="Horizontal">
-                            <Button Style="{StaticResource CustomButton}" Command="{Binding ClickAll}" Content="All" FontSize="14" Width="100" Margin="10,0,0,0"/>
-                            <Button Style="{StaticResource CustomButton}" Command="{Binding ClickMy}" Content="My" FontSize="14" Width="100" Margin="10,0,0,0"/>
-                            <Button Style="{StaticResource CustomButton}" Command="{Binding Create}" Content="Create" FontSize="14" Width="100" Margin="10,0,0,0"/>
+                            <Button Style="{StaticResource CustomButton}" Command="{Binding ClickAll}" Content="{DynamicResource Loc_TView_All}" FontSize="14" Width="100" Margin="10,0,0,0"/>
+                            <Button Style="{StaticResource CustomButton}" Command="{Binding ClickMy}" Content="{DynamicResource Loc_TView_My}" FontSize="14" Width="100" Margin="10,0,0,0"/>
+                            <Button Style="{StaticResource CustomButton}" Command="{Binding Create}" Content="{DynamicResource Loc_TView_Create}" FontSize="14" Width="100" Margin="10,0,0,0"/>
                         </StackPanel>
                     </Border>
 
                     <cui:TextBoxEx x:Name="textFilterBox" DockPanel.Dock="Right" Width="250"
-                                   HorizontalAlignment="Right" Placeholder="Tempalate name" Height="40"/>
+                                   HorizontalAlignment="Right" Placeholder="{DynamicResource Loc_TView_Search}" Height="40"/>
                 </DockPanel>
             </Grid>
         </Border>

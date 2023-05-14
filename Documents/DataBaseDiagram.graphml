@@ -98,24 +98,6 @@ CloseOrderDate<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:Mo
     <node id="n4">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="112.39999999999998" width="106.0" x="28.0" y="363.2457446808511"/>
-          <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
-          <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#FFFFFF" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.701171875" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="62.013671875" x="21.9931640625" xml:space="preserve" y="4.0">Comments</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="77.505859375" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="84.0390625" x="2.0" xml:space="preserve" y="30.701171875">PK: Id
-FK: User_Id
-FK: Product_Id
-Message
-SendDateTime<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:ModelParameter><y:ErdAttributesNodeLabelModelParameter/></y:ModelParameter></y:NodeLabel>
-          <y:StyleProperties>
-            <y:Property class="java.lang.Boolean" name="y.view.ShadowNodePainter.SHADOW_PAINTING" value="false"/>
-          </y:StyleProperties>
-        </y:GenericNode>
-      </data>
-    </node>
-    <node id="n5">
-      <data key="d6">
-        <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="98.19999999999999" width="99.0" x="-251.04999999999995" y="-93.34999999999997"/>
           <y:Fill color="#FFFFFF" color2="#FFFFFF" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
@@ -130,7 +112,7 @@ Description<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:Model
         </y:GenericNode>
       </data>
     </node>
-    <node id="n6">
+    <node id="n5">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="84.19999999999999" width="99.0" x="-402.54999999999995" y="-79.24999999999997"/>
@@ -146,7 +128,7 @@ FK: Product_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:Mo
         </y:GenericNode>
       </data>
     </node>
-    <node id="n7">
+    <node id="n6">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="98.19999999999999" width="99.0" x="-723.86524822695" y="-239.10921985815605"/>
@@ -163,17 +145,7 @@ FK: Template_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:M
         </y:GenericNode>
       </data>
     </node>
-    <edge id="e0" source="n0" target="n4">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="crows_foot_one" target="crows_foot_many"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e1" source="n1" target="n2">
+    <edge id="e0" source="n1" target="n2">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="61.398758865247885" sy="-7.3078014184397375" tx="-14.99716312056762" ty="-7.400000000000006"/>
@@ -183,7 +155,7 @@ FK: Template_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:M
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e2" source="n5" target="n6">
+    <edge id="e1" source="n4" target="n5">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-28.201773049645112" sy="7.099999999999994" tx="0.0" ty="0.0"/>
@@ -193,7 +165,7 @@ FK: Template_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:M
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e3" source="n0" target="n3">
+    <edge id="e2" source="n0" target="n3">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -203,7 +175,7 @@ FK: Template_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:M
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e4" source="n0" target="n5">
+    <edge id="e3" source="n0" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-49.53865248226913" sy="-44.91812027431004" tx="0.0" ty="0.0">
@@ -215,7 +187,7 @@ FK: Template_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:M
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e5" source="n6" target="n1">
+    <edge id="e4" source="n5" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -227,7 +199,7 @@ FK: Template_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:M
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e6" source="n3" target="n7">
+    <edge id="e5" source="n3" target="n6">
       <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
@@ -240,7 +212,7 @@ FK: Template_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:M
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e7" source="n7" target="n1">
+    <edge id="e6" source="n6" target="n1">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="-61.34550088652509" ty="-6.764539007092253">
@@ -252,19 +224,7 @@ FK: Template_Id<y:LabelModel><y:ErdAttributesNodeLabelModel/></y:LabelModel><y:M
         </y:PolyLineEdge>
       </data>
     </edge>
-    <edge id="e8" source="n4" target="n1">
-      <data key="d10">
-        <y:PolyLineEdge>
-          <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
-            <y:Point x="-514.2749999999997" y="419.4457446808511"/>
-          </y:Path>
-          <y:LineStyle color="#000000" type="line" width="1.0"/>
-          <y:Arrows source="crows_foot_many" target="crows_foot_one"/>
-          <y:BendStyle smoothed="false"/>
-        </y:PolyLineEdge>
-      </data>
-    </edge>
-    <edge id="e9" source="n7" target="n5">
+    <edge id="e7" source="n6" target="n4">
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="49.46133373391069" sy="28.433333542189672" tx="0.0" ty="0.0">

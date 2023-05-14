@@ -19,7 +19,7 @@
 
         <Border Grid.Row="0" Background="#5F7FF0" CornerRadius="0,9,0,0">
             <Grid>
-                <TextBlock Text="Shopping cart" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
+                <TextBlock Text="{DynamicResource Loc_Basket_Tittle}" Style="{StaticResource H0Text}" Margin="0,10,0,0"/>
             </Grid>
         </Border>
 
@@ -100,11 +100,11 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Orientation="Vertical" Grid.Row="2" Margin="48,0,48,0">
-            <cui:TextBoxEx x:Name="orderNoteBox" Placeholder="Order note" Height="45" Margin="0,10,0,15"/>
+            <cui:TextBoxEx x:Name="orderNoteBox" Placeholder="{DynamicResource Loc_Basket_Note}" Height="45" Margin="0,10,0,15"/>
             <DockPanel Height="40">
                 <TextBlock DockPanel.Dock="Left" Style="{StaticResource H2Text}" Foreground="Black"
                                TextAlignment="Left" Text="{Binding TotalPrice}"/>
-                <Button DockPanel.Dock="Right" Style="{StaticResource CustomButton}" Content="Confirm" HorizontalAlignment="Right"
+                <Button DockPanel.Dock="Right" Style="{StaticResource CustomButton}" Content="{DynamicResource Loc_Global_Confirm}" HorizontalAlignment="Right"
                             Width="150" Command="{Binding CreateOrder}"/>
             </DockPanel>
         </StackPanel>

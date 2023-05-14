@@ -61,6 +61,114 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Note.
+        /// </summary>
+        public static string Loc_Basket_Note {
+            get {
+                return ResourceManager.GetString("Loc_Basket_Note", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Shoping cart.
+        /// </summary>
+        public static string Loc_Basket_Tittle {
+            get {
+                return ResourceManager.GetString("Loc_Basket_Tittle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Drop filters.
+        /// </summary>
+        public static string Loc_Catalog_FDrop {
+            get {
+                return ResourceManager.GetString("Loc_Catalog_FDrop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Set filters.
+        /// </summary>
+        public static string Loc_Catalog_FSet {
+            get {
+                return ResourceManager.GetString("Loc_Catalog_FSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Product name.
+        /// </summary>
+        public static string Loc_Catalog_Search {
+            get {
+                return ResourceManager.GetString("Loc_Catalog_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Catalog.
+        /// </summary>
+        public static string Loc_Catalog_Tittle {
+            get {
+                return ResourceManager.GetString("Loc_Catalog_Tittle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на From.
+        /// </summary>
+        public static string Loc_FilterPopup_From {
+            get {
+                return ResourceManager.GetString("Loc_FilterPopup_From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Price.
+        /// </summary>
+        public static string Loc_FilterPopup_Price {
+            get {
+                return ResourceManager.GetString("Loc_FilterPopup_Price", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Filters.
+        /// </summary>
+        public static string Loc_FilterPopup_Tittle {
+            get {
+                return ResourceManager.GetString("Loc_FilterPopup_Tittle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на To.
+        /// </summary>
+        public static string Loc_FilterPopup_To {
+            get {
+                return ResourceManager.GetString("Loc_FilterPopup_To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Type.
+        /// </summary>
+        public static string Loc_FilterPopup_Type {
+            get {
+                return ResourceManager.GetString("Loc_FilterPopup_Type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Confirm.
+        /// </summary>
+        public static string Loc_Global_Confirm {
+            get {
+                return ResourceManager.GetString("Loc_Global_Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Empty field.
         /// </summary>
         public static string Loc_Global_EmptyField {
@@ -358,6 +466,33 @@ namespace PCBuilder.Localization {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Description.
+        /// </summary>
+        public static string Loc_TEdit_Description {
+            get {
+                return ResourceManager.GetString("Loc_TEdit_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name.
+        /// </summary>
+        public static string Loc_TEdit_Name {
+            get {
+                return ResourceManager.GetString("Loc_TEdit_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Template editor.
+        /// </summary>
+        public static string Loc_TEdit_Tittle {
+            get {
+                return ResourceManager.GetString("Loc_TEdit_Tittle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Have empty slots!.
         /// </summary>
         public static string Loc_TempEdit_Popup_HaveES {
@@ -417,6 +552,132 @@ namespace PCBuilder.Localization {
         public static string Loc_TempEdit_ValidateErrMesTemp {
             get {
                 return ResourceManager.GetString("Loc_TempEdit_ValidateErrMesTemp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на All.
+        /// </summary>
+        public static string Loc_TView_All {
+            get {
+                return ResourceManager.GetString("Loc_TView_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Create.
+        /// </summary>
+        public static string Loc_TView_Create {
+            get {
+                return ResourceManager.GetString("Loc_TView_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на My.
+        /// </summary>
+        public static string Loc_TView_My {
+            get {
+                return ResourceManager.GetString("Loc_TView_My", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Template name.
+        /// </summary>
+        public static string Loc_TView_Search {
+            get {
+                return ResourceManager.GetString("Loc_TView_Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Templates.
+        /// </summary>
+        public static string Loc_TView_Tittle {
+            get {
+                return ResourceManager.GetString("Loc_TView_Tittle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Address.
+        /// </summary>
+        public static string Loc_User_Address {
+            get {
+                return ResourceManager.GetString("Loc_User_Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Email.
+        /// </summary>
+        public static string Loc_User_Email {
+            get {
+                return ResourceManager.GetString("Loc_User_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Name.
+        /// </summary>
+        public static string Loc_User_Name {
+            get {
+                return ResourceManager.GetString("Loc_User_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Number.
+        /// </summary>
+        public static string Loc_User_Number {
+            get {
+                return ResourceManager.GetString("Loc_User_Number", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Items count.
+        /// </summary>
+        public static string Loc_User_OH_ItemsCount {
+            get {
+                return ResourceManager.GetString("Loc_User_OH_ItemsCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Status.
+        /// </summary>
+        public static string Loc_User_OH_Status {
+            get {
+                return ResourceManager.GetString("Loc_User_OH_Status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Total price.
+        /// </summary>
+        public static string Loc_User_OH_TotalPrice {
+            get {
+                return ResourceManager.GetString("Loc_User_OH_TotalPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Order history.
+        /// </summary>
+        public static string Loc_User_OrderHistory {
+            get {
+                return ResourceManager.GetString("Loc_User_OrderHistory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на User.
+        /// </summary>
+        public static string Loc_User_Tittle {
+            get {
+                return ResourceManager.GetString("Loc_User_Tittle", resourceCulture);
             }
         }
     }
